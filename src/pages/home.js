@@ -17,12 +17,14 @@ const getTheaterApi = () => {
 }
 
 
+
 function Home() {
   const template = `
+  <div class = main>
   <div class="template">
     <header class="header"><img class="logo" src="./Imagens/Logo.png"></header>
-    <input type="checkbox" id="btn-menu"/>
-    <label for="btn-menu">&#9776;</label>
+    <input type="checkbox" id="btn-menu" />
+    <label for="btn-menu" class="hamburguer-menu">&#9776;</label>
     <nav class="menu">
       <ul>
       ${Menu({
@@ -40,9 +42,11 @@ function Home() {
       </ul> 
     </nav>
     <section>
+    <div class='destaque'>
       <h3 class="text-simple">Peças em destaque</h3>
       <div class="highlight"></div>
     </section>
+    </div>
     <section>
     <h3 class="text-simple">Todas as peças</h3>
       <div class="search">
@@ -81,6 +85,7 @@ function Home() {
       <div class="all"></div>
     </section>
   </div>
+  </div>
   `;
   location.hash = 'home';
   return template;
@@ -88,6 +93,7 @@ function Home() {
 
 function cards(allData) {
   document.querySelector('.all').innerHTML += `
+
   ${ListCard({
     name: allData.name,
     img: allData.photo_url,
@@ -129,3 +135,4 @@ window.home = {
 }
 
 export {Home, getTheaterApi} ;
+

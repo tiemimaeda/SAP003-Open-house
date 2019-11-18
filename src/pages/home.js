@@ -4,6 +4,19 @@ import Card from '../components/card.js';
 import Menu from '../components/menu.js';
 import ListCard from '../components/listcard.js';
 
+
+const getTheaterApi = () => {
+  fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
+  .then(response => response.json())
+  .then((data) => {
+    data.map(api => {
+      let allData = api;
+      cards(allData)
+    })
+  })
+}
+
+
 function Home() {
   const template = `
   <div class="template">
@@ -28,32 +41,7 @@ function Home() {
     </nav>
     <section>
       <h3 class="text-simple">Peças em destaque</h3>
-      <div class="highlight">
-      ${Card({
-        class: 'card',
-        name: 'Peça 1',
-        img: './Imagens/Peça D1.jpg',
-        price: 'R$ 15,00',
-        classification: 'Livre',
-        date: '29/11/2019',
-      })}
-      ${Card({
-        class: 'card',
-        name: 'Peça 2',
-        img: './Imagens/Peça D2.jpeg',
-        price: 'R$ 30,00',
-        classification: 'Livre',
-        date: '21/11/2019',
-      })}
-      ${Card({
-        class: 'card',
-        name: 'Peça 3',
-        img: './Imagens/Peça D3.jpg',
-        price: 'R$ 50,00',
-        classification: 'Livre',
-        date: '15/11/2019',
-      })}
-      </div>
+      <div class="highlight"></div>
     </section>
     <section>
     <h3 class="text-simple">Todas as peças</h3>
@@ -65,7 +53,7 @@ function Home() {
       })}
       ${Button({
         id: 'search',
-        class:'',
+        class:'btnsearch',
         title: '🔎',
         onClick: Search,
       })}
@@ -90,32 +78,7 @@ function Home() {
       <option value='+100'>Acima de R$100,00</option>
       </select>
       </div>
-      <div class="all">
-      ${ListCard({
-        class: 'listcard',
-        name: 'Peça 1',
-        img: './Imagens/Peça D1.jpg',
-        price: 'R$ 15,00',
-        classification: 'Livre',
-        date: '29/11/2019',
-      })}
-      ${ListCard({
-        class: 'listcard',
-        name: 'Peça 2',
-        img: './Imagens/Peça D2.jpeg',
-        price: 'R$ 30,00',
-        classification: 'Livre',
-        date: '21/11/2019',
-      })}
-      ${ListCard({
-        class: 'listcard',
-        name: 'Peça 3',
-        img: './Imagens/Peça D3.jpg',
-        price: 'R$ 50,00',
-        classification: 'Livre',
-        date: '15/11/2019',
-      })}
-      </div>
+      <div class="all"></div>
     </section>
   </div>
   `;
@@ -123,8 +86,29 @@ function Home() {
   return template;
 }
 
+function cards(allData) {
+  document.querySelector('.all').innerHTML += `
+  ${ListCard({
+    name: allData.name,
+    img: allData.photo_url,
+    price: allData.price,
+    classification: allData.parental_raiting,
+    date: allData.date .join(', '),
+    class: 'listcard',
+  })}
+  `
+}
+
 function Search() {
-  console.log('pesquisar ok')
+  const keyWord  = document.querySelector('.input').value;
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+  .then(response => response.json())
+  .then(data => {
+    const filter  = data.filter((item) => item.name.includes(keyWord)); 
+    document.querySelector('.all').innerHTML = '';
+    filter.forEach((item) => window.home.cards(item) );
+    }
+  )
 }
 
 function About() {
@@ -140,38 +124,8 @@ function Contact() {
 };
 
 
-
-/* function loginEmail() {
-  const email = document.querySelector('.email-Cards').value;
-  const password = document.querySelector('.password-input').value;
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then(() => {
-      location.hash = 'post'
-    })
-    .catch(function (error) {
-      const errorCode = error.code;
-      if (errorCode === 'auth/wrong-password') {
-        document.querySelector('.alert-message').textContent = 'Senha errada!.';
-      } if (errorCode === 'auth/user-not-found') {
-        document.querySelector('.alert-message').textContent = 'Usuário não encontrado.';
-      } else {
-        document.querySelector('.alert-message').textContent = 'Usuário não cadastrado.';
-      }
-    })
+window.home = {
+  cards
 }
 
-function loginGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithRedirect(provider);
-  firebase.auth().getRedirectResult()
-}
-
-function forgetPassword() {
-  window.location.hash = 'forgot_password';
-}
-
-function HashRegister() {
-  window.location.hash = 'register';
-} */
-
-export default Home;
+export {Home, getTheaterApi} ;

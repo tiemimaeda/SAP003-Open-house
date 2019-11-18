@@ -1,4 +1,4 @@
-import Home from './pages/home.js';
+import {Home, getTheaterApi} from './pages/home.js';
 import AboutUs from './pages/about.js';
 import Contact from './pages/contact.js';
 import Indicate from './pages/indicate.js';
@@ -8,6 +8,7 @@ function routesPage() {
   switch (location.hash) {
     case "#home":
       main.innerHTML = Home();
+      getTheaterApi();
       break;
     case "#about":
       main.innerHTML = AboutUs();

@@ -135,11 +135,6 @@ function Search() {
   )
 }
 
-/*  document.querySelector('#price').addEventListener('change', function(e) {
-  let option = e.target.value;
-  console.log(option)
- }, true ) */
-
 function About() {
   window.location.hash = 'about'
 };

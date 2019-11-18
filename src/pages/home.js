@@ -4,23 +4,17 @@ import Card from '../components/card.js';
 import Menu from '../components/menu.js';
 import ListCard from '../components/listcard.js';
 
-window.onload = () => {
-  getTheaterApi();
-/*   Home();
-  cards(); */
 
-  
-  }
-  const getTheaterApi = () => {
-    fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
-    .then(response => response.json())
-    .then((data) => {
-      data.map(api => {
-        let allData = api;
-        cards(allData)
-      })
+const getTheaterApi = () => {
+  fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
+  .then(response => response.json())
+  .then((data) => {
+    data.map(api => {
+      let allData = api;
+      cards(allData)
     })
-  }
+  })
+}
 
 
 
@@ -50,7 +44,7 @@ function Home() {
     <section>
     <div class='destaque'>
       <h3 class="text-simple">Peças em destaque</h3>
-
+      <div class="highlight"></div>
     </section>
     </div>
     <section>
@@ -63,7 +57,7 @@ function Home() {
       })}
       ${Button({
         id: 'search',
-        class:'',
+        class:'btnsearch',
         title: '🔎',
         onClick: Search,
       })}
@@ -88,7 +82,7 @@ function Home() {
       <option value='+100'>Acima de R$100,00</option>
       </select>
       </div>
-      <div class='teste'></div>
+      <div class="all"></div>
     </section>
   </div>
   </div>
@@ -97,9 +91,9 @@ function Home() {
   return template;
 }
 
-
 function cards(allData) {
-  document.querySelector('.teste').innerHTML += `
+  document.querySelector('.all').innerHTML += `
+
   ${ListCard({
     name: allData.name,
     img: allData.photo_url,
@@ -109,11 +103,18 @@ function cards(allData) {
     class: 'listcard',
   })}
   `
-
 }
 
 function Search() {
-  console.log('pesquisar ok')
+  const keyWord  = document.querySelector('.input').value;
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+  .then(response => response.json())
+  .then(data => {
+    const filter  = data.filter((item) => item.name.includes(keyWord)); 
+    document.querySelector('.all').innerHTML = '';
+    filter.forEach((item) => window.home.cards(item) );
+    }
+  )
 }
 
 function About() {
@@ -128,8 +129,10 @@ function Contact() {
   window.location.hash = 'contact'
 };
 
+
 window.home = {
-  cards,
+  cards
 }
 
-export default Home;
+export {Home, getTheaterApi} ;
+

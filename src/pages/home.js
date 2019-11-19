@@ -26,61 +26,70 @@ window.onload = () => {
 
 function Home() {
   const template = `
-  <div class = main>
   <div class="template">
-    <header class="header"><img class="logo" src="./Imagens/Logo.png"></header>
-    <input type="checkbox" id="btn-menu" />
-    <label for="btn-menu" class="hamburguer-menu">&#9776;</label>
-    <nav class="menu">
-      <ul>
-      ${Menu({
-        name: 'Sobre',
-        link: About,
-      })}
-      ${Menu({
-        name: 'Indique uma peça',
-        link: Indicate,
-      })}
-      ${Menu({
-        name: 'Contato',
-        link: Contact,
-      })}
-      </ul> 
-    </nav>
-    <section>
+  <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
+  <input type="checkbox" id="btn-menu" />
+  <label for="btn-menu" class="hamburguer-menu">&#9776;</label>
+  <nav class="menu">
+  <ul>
+  ${Menu({
+    name: 'Sobre',
+    link: About,
+  })}
+  ${Menu({
+    name: 'Indique uma peça',
+    link: Indicate,
+  })}
+  ${Menu({
+    name: 'Contato',
+    link: Contact,
+  })}
+  </ul> 
+  </nav>
+  <div class = 'main'>
+  <section>
     <div class='destaque'>
-      <h3 class="text-simple">Peças em destaque</h3>
-
-    </section>
+      <h3 class="text-simple"> ⭐ Peças em destaque ⭐</h3>
+      <div class='caroussel'></div>
     </div>
-    <section>
+  </section>
+  <div class='all-plays'>
+  <section>
     <h3 class="text-simple">Todas as peças</h3>
       <div class="search">
-      ${Input({
-      class: 'input ',
-      placeholder: 'Pesquise aqui',
-      type: 'text',
-      })}
-      ${Button({
-        id: 'search',
-        class:'',
-        title: '🔎',
-        onClick: Search,
-      })}
+      <div class = 'search-by-name'>
+        ${Input({
+        class: 'input ',
+        placeholder: 'Pesquise aqui',
+        type: 'text',
+        })}
+        ${Button({
+          id: 'search',
+          class:'btn-search',
+          title: '🔎',
+          onClick: Search,
+        })}
+      </div>
+      <div class='select-filters'>
       <select>
+      <div class='filter-location'>
       <option value=''>localização</option>
       <option value='zs'>zona sul</option>
       <option value='zn'>zona norte</option>
       <option value='zo'>zona oeste</option>
       <option value='zl'>zona leste</option>
       <option value='center'>centro</option>
+      </div>
       </select>
+      <div class='filter-date'>
       ${Input({
         class: 'data ',
         placeholder: '',
         type: 'date',
         })}
-      <select>
+        </div>
+        <select>
+        <div class='filter-value'>
       <option value=''>valor</option>
       <option value='free'>Gratuito</option>
       <option value='50'>Até R$50,00</option>
@@ -88,8 +97,11 @@ function Home() {
       <option value='+100'>Acima de R$100,00</option>
       </select>
       </div>
+      </div>
       <div class='teste'></div>
+      </div>
     </section>
+  </div>
   </div>
   </div>
   `;

@@ -192,9 +192,9 @@ function Search() {
 }
 
 function filterDate() {
-  document.querySelector('.date').innerHTML = '';
+  document.querySelector('.date-input').innerHTML = '';
   document.querySelector('.all').innerHTML = '';
-  const dateFilter = document.querySelector('.date').value;
+  const dateFilter = document.querySelector('.date-input').value;
   const d = new Date(dateFilter)
   const date = d.getDate()+1;
   const month = d.getMonth()+1;

@@ -4,10 +4,17 @@
   padding: 0;
 }
 
+.main{
+  background-color: #adadad;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 /* menu-hamburguer*/
 #btn-menu:checked ~ .menu{
-  margin-top: -5%;
-  margin-left: 5%;
+  margin-top: 0%;
+  margin-left: 57%;
   display: block;
 }
 
@@ -15,379 +22,318 @@
   display: none;
 }
 
-
-/*card dos destaques*/
-.container{
-  display: flex;
-  flex-direction:column;
-  width: 90%;
-  border:1px solid #E85531;
-
-}
-
-.card {
-  display: flex;
-  flex-flow: column;
-  width: 30%;
-  border-radius: 10px;
-  border:1px solid #E85531;
-  align-items: center;
-}
-.card-name {
-  width: 100%;
- justify-content: center;
-  font-weight: bolder;
-  background-color:#E85531;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.card-image {
-  width: 90%;
-  height: auto;
-}
-.card-time {
-  font-size: 70%;
-  border: none;
-  border-radius: 10px 10px 0 0 ;
-  background-color:#E85531;
-  padding: 2% 2% 0;
-}
-.fa-google{
-  color: white;
-}
-.forms{
-  display: flex;
-  flex-direction: column;
-  padding: 3% 0;
-  align-items: center;
-}
-.forms-post{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10% 5% 0;
-}
-.group-button{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.header {
-  background-image: radial-gradient(#ffbb36 5%, #E85531);
-  height: auto;
-}
-.header-post {
-  height: auto;
-  display: flex;
-  background-image: radial-gradient(#ffbb36 5%, #E85531);
-  width: 100%;
-}
-.highlight {
-  display:flex;
-  justify-content: space-around;
-  flex-direction: row;
-}
-.img-post {
-  height: 120px;
-  margin: auto;
-}
-.input  {
-  width: auto;
-  border-radius: 15px;
-  padding: 5px;
-  margin: 0 3% 5%;
-}
-.job-user{
-  color: #FF1C14;
-  align-items: center;
-  word-wrap: break-word;
-  padding-top: 2%;
-}
-
 label[for="btn-menu"] {
-  padding: 3%;
   font-size: 150%;
   cursor: pointer;
   position: absolute;
-  top: 5%;
-  left: 5%;
-  border: 2px solid #FFC44F;
+  top: 5px;
+  right: 15px;
+  color: #ffffff;
 }
-label{
-  font-family: 'Handlee', cursive;
-  font-weight: bold;
-  font-size: large;
-  padding: 2%;
-}
-.listcard {
-  display: flex;
-  flex-flow: column;
-  width: 80%;
-  border-radius: 10px;
-  border:1px solid #E85531;
-}
-#list-post {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-}
-.logo{
-  height: 120px;
-  display: flex;
-  margin: auto;
-}
+
 .menu {
   margin-left: -100%;
   width: 100%;
-  transition: all .3s;
   position: absolute;
 }
-.menu ul {
+ .menu ul {
   list-style: none;
   position: relative;
   display: inline-block;
-}
+} 
 .menu ul li {
   width: 100%;
   float: none;
-  background-color: #FFC44F;
+  background-color: #333333;
 }
+
 .menu a {
   padding: 15px;
   display: flex;
   text-decoration: none;
   text-align: center;
   font-size: 15px;
-}
-.menu ul li:hover a {
-  background-color: #FF1C14;
-  color: black;
-}
-.name-user{
-  font-weight: 600;
-  color: #FF1C14;
-  align-self: center;
-  padding-top: 2%;
-}
-.name-network {
-  color: #FF1C14;
-  font-size: 350%;
-  font-family: 'Amaranth', sans-serif;
-  margin: auto;
-  text-align: center;
-  padding: 4%;
-  text-shadow: #df7f1d 2px 2px 2px;
-}
-.primary-box {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-}
-.post-textarea{
-  border-radius: 10px;
-  height: 80px;
-  width: 90%;
-  padding: 2%;
-  margin-bottom: 2%;
-}
-.post-box{
-  display: flex;
-  justify-content: center;
-  margin: 5% 0;
-}
-.primary-icon {
-  border: 1px solid #FFC44F;
-  border-radius: 1%;
-}
-.delete-button {
-  position: absolute;
-  right: 11%;
-  margin: 2% 0;
-  width: 7%;
-  height: 4%;
-  font-weight: 900;
-  color: red;
-}
-.like-button {
-  position: absolute;
-  right: 10%;
-  align-self: flex-end;
-  width: 12%;
-  height: 4%;
-}
-.edit-button {
-  position: absolute;
-  left: 10%;
-  align-self: flex-end;
-  width: 7%;
-  height: 4%;
-}
-.save-button {
-  position: absolute;
-  left: 21%;
-  align-self: flex-end;
-  width: 7%;
-  height: 4%;
+  color: #ffffff;
 }
 
-.register-section {
+/* header */
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  background-color: #333333;
+  height: 5%;
 }
-#saveData {
-  padding: 3%;
-  margin: 5%;
-  background-color: #FFC44F;
+
+.logo{
+  width: 60%;
+  height: 100%;
+  
 }
+
+
+/*card dos destaques*/
+div.destaque{
+  width: 95vw;
+  height: 300px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  margin: 10px;
+  background-color: #333333;
+} 
+
+.caroussel{
+  width: 90%;
+  height: 80%;
+  background-color: #bf8164;
+}
+
+
+
+/* todas as peças filtros*/
 .text-simple {
   text-align: center;
   padding: 2%;
-}
-#deleteCount {
-  padding: 3%;
-  background-color: #e86b76;
-}
-.user {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  margin: 5%;
-  border-radius: 10px;
-  box-shadow: 3px 3px 10px 1px #E85531;
-}
-.user-info {
-  display: flex;
-  flex-direction: column;
+  background-color: #333333;
+  color: #ffffff;
+} 
+
+.search {
+  background-color: #333333;
 }
 
-@media screen and (min-width: 992px) {
-  .avatar {
-    height: 80px;
-    margin: 0 10px 0 0;
-  }
-  .box-post {
-    flex: 1 1 100%
-  }
-  #btn-menu {
-    height: auto;
-    width: 6%;
-  }
-  #btn-menu:checked ~ .menu{
-    margin-top: -1.8%;
-    margin-left: 5%;
-    display: block;
-  }
-  #btn-menu:checked ~ #post.menu{
-    margin-top: 7%;
-  }
-  #deleteCount{
-    display: inline-block;
-    width: 100%;
-    padding: 5%
-  }
-  .forms-post {
-    margin: 50px 5% 10% ;
-    border: 1px solid lightgrey;
-    border-radius: 10px;
-  }
-  .header {
-    flex: 1 1 100%;
-    display: flex;
-  }
-  .header-post {
+.all-plays{
+  width: 95vw;
   display: flex;
-  background-image: radial-gradient(#ffbb36 5%, #E85531);
-  }
-  .job-user{
-    margin: 0 20% 0 5%;
-    height: auto;
-    align-items: baseline;
-    width: 75%;
-  }
-  .logo {
-    height: auto;
-  }
-  .login-section{
-    flex:1 1 100%;
-  }
-  label[for="btn-menu"] {
-    padding: 1%;
-  }
-  .name-network{
-    font-size: 450%;
-  }
-  .name-user{
-    display: flex;
-    align-self: baseline;
-    margin-left: 5%;
-  }
-  .group-button{
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    width: 50%;
-  }
-  .profile-section{
-    flex: 1 1 100%;
-  }
-  .post-textarea {
-    margin: 3%;
-    width: 85%;
-    border-width: medium;
-  }
-  .delete-button {
-    right: 5%;
-    margin-top: 1%;
-    width: 3%;
-    height: auto;
-  }
-  .edit-button {
-    width: 3%;
-    height: auto;
-    left: 45%;
-  }
-  .like-button {
-    right: 5%;
-    width: 5%;
-    height: auto;
-    margin-bottom: auto;
-  }
-  .save-button {
-    left: 49%;
-    height: 5%;
-    width: 3%;
-  }
-  .register-section{
-    flex:1 1 100%;
-    padding: 2% 0 2%;
-  }
-  #saveData{
-    display: inline-block;
-    width: 100%;
-    padding: 5%;
-  }
-  .list-post {
-    width: 50%;
-    margin: 2%;
-    margin-left: 36%;
-  }
-  .template{
-    display: flex;
-  }
-  .update-box {
-    flex: 1 1 100%;
-    padding: 14% 0 14%;
-  }
-  .user {
-    display: flex;
-    flex: 1 1 50%;
-    justify-content: center;
-    height: 50%;
-    margin: 50px 5%;
-  }
-  .template-post {
-    display: flex;
-  }
+  flex-direction:column;
+  align-items: center;
+  margin: 10px;
+}
+
+.search-by-name{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0px 5px 0px;
+  background-color: #333333;
+}
+
+.btn-search{
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+
+.or{
+  color: #ffffff;
+  text-align: center;
+}
+.select-filters{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 10px 10px 10px;
+}
+
+.filter-location, .filter-value{
+  width: 33%;
+  border-radius: 20px;
+  padding-left: 8px;
+}
+
+.date-input{
+  width: 100px;
+  border-radius: 20px;  
+}
+
+
+/* cards todas as peças */
+.teste{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 300px;
+  height: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 20px;
+}
+
+.listcard {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  min-height: 120px;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-top: 15px;
+}
+
+.card-image {
+  justify-content: row;
+  align-self: center;
+  max-height: 110px;
+  width: 40%;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.card-image img {
+  width: 100%;
+}
+
+.card-time {
+  font-size: 70%;
+  border: none;
+  border-radius: 10px 10px 0 0 ;
+  background-color:#E85531;  
+}
+
+.card-name{
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* form indicação de peça */
+.forms{
+  display: flex;
+  flex-direction: column;
+  padding: 3% 0;
+  align-items: center;
+}
+
+/* input pág de indicação */
+.input  {
+  width: auto;
+  border-radius: 15px;
+  padding: 4px;
+}
+.search-input{
+margin: 0px 10px;
+}
+
+ .card {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  border-radius: 10px;
+  border:1px solid #E85531;
+  align-items: center;  
+} 
+
+.card-info{
+display: flex;
+flex-direction: column;
+max-height: 80px;
+}
+
+.card-name {
+  font-weight: bolder;
+  font-size: 15px; 
+}
+
+.card-price, .card-classification,  .card-theatre{
+font-size: 15px;
+}
+
+
+/* about us */
+
+.aboutUs{
+  background-image: url(./Imagens/theater.jpg);
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  align-items: center;
+
+}
+
+.about-us-container{
+  width: 85%;
+  height: 90%;
+  align-self: center;
+  background-color: rgba(12, 12, 12, 0.76); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-info{
+  width: 80%; 
+}
+
+.name-network{
+  margin-left: 18%;
+}
+
+.title-about-us{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px 10px 0px;
+}
+
+/* indicação */
+.register-section{
+  width: 100vw;
+  height: 90vh;
+  background-color: #adadad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-description-indicate{
+  align-self: center;
+  width: 70%;
+  
+}
+
+.send-message{
+  margin-left: 60px;
+  margin-bottom: 30px;
+}
+
+.forms{
+  margin-left: 35px;
+  width: 80%;
+  background-color: #333333;
+}
+
+.title-indicate{
+  color: rgb(255, 253, 253);
+}
+
+.input-indicate{
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.button-send-green{
+  width: 60px;
+  background-color: rgb(93, 199, 98);
+}
+
+/* contato */
+.profile-section{
+  background-color: #adadad;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.alert-message{
+  align-self: center;
+  width: 70%;
+  
+}
+
+.handshake-icon{
+  margin-top: 100px;
+  align-self: center;
+  width: 40%;
 }

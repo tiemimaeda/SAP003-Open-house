@@ -72,8 +72,7 @@ label[for="btn-menu"] {
 
 .logo{
   width: 60%;
-  height: 100%;
-  
+  height: 100%; 
 }
 
 
@@ -217,8 +216,8 @@ div.destaque{
 .forms{
   display: flex;
   flex-direction: column;
-  padding: 3% 0;
   align-items: center;
+  padding: 3% 0;
 }
 
 /* input pág de indicação */
@@ -284,7 +283,7 @@ font-size: 15px;
 }
 
 .name-network{
-  margin-left: 18%;
+  align-self: center;
 }
 
 .title-about-us{
@@ -341,13 +340,13 @@ font-size: 15px;
   height: 90vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   
 }
 
 .alert-message{
+  width: 100%;
   align-self: center;
-  width: 70%;
-  
 }
 
 .handshake-icon{
@@ -355,3 +354,91 @@ font-size: 15px;
   align-self: center;
   width: 40%;
 }
+
+.email-link{
+  display: flex;
+  align-self: center;
+  margin-top: 30px;
+  color: #000000;
+}
+
+@media only screen and (min-width: 768px) {
+.header{
+  height:2%;
+}
+
+.logo{
+  width: 25%;
+  max-height: 70px;
+}
+
+div.destaque{
+  max-width: 80%;
+  margin: 20px 100px 20px 100px;
+  height: 350px;
+}
+
+.caroussel{
+  width: 90%;
+  height: 70%;
+}
+
+.all-plays{
+  max-width: 80%;
+  width: 90%;
+  margin: 20px 100px 20px 100px;
+}
+.listcard{
+  margin-left: 20px;
+}
+
+.card-image{
+  max-width: 250px;
+  height: 300px;
+
+}
+
+
+ 
+/* sobre */
+.aboutUs{
+  background-image: url(./Imagens/theater_2.jpg) ;
+}
+
+.about-us-container{
+  width: 50%;
+}
+
+.about-us-info{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* indique uma peça */
+.forms{
+  margin: 20px 100px 20px 100px;
+}
+
+.text-description-indicate{
+  margin-left: 250px;
+}
+
+.input-indicate{
+  width: 50%;
+  margin-bottom: 20px;
+}
+.send-message{
+  margin-left: 250px;
+}
+.handshake-icon{
+  width: 15%;
+  margin-top: 10px;
+}
+.text-contact{
+  margin-left:900px ;
+}
+  
+}
+

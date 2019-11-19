@@ -3,7 +3,7 @@ import Menu from '../components/menu.js';
 function AboutUs() {
   const template = `
   <div class="template">
-  <header class="header"><img class="logo" src="./Imagens/Logo.png"></header>
+  <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
   <input type="checkbox" id="btn-menu"/>
   <label for="btn-menu">&#9776;</label>
   <nav class="menu">
@@ -23,14 +23,18 @@ function AboutUs() {
     </ul> 
     </nav>  
     <section class = "aboutUs">
-      <h1 class="name-network">Quem nós somos?</h1>
-      <h3 class="text-simple">Missão</h3>
+    <div class='about-us-container'>
+    <div class='about-us-info'>
+      <h1 class="name-network">Quem somos?</h1>
+      <h3 class="title-about-us">Missão</h3>
       <p class="alert-message">Facilitar a divulgação de peças e espetáculos gratuitos e pagos de diversas companhia teatrais, de forma simples e transparente</p>
-      <h3 class="text-simple">Visão</h3>
+      <h3 class="title-about-us">Visão</h3>
       <p class="alert-message">Aumentar o número de pessoas que frequentam teatro</p>
-      <h3 class="text-simple">Valores</h3>
+      <h3 class="title-about-us">Valores</h3>
       <p class="alert-message">Incentivar a cultura em todas as camadas sociais</p>
-    </section>
+    </div>
+    </div>
+      </section>
   </div>
   `;
   return template;

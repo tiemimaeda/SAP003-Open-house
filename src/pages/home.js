@@ -60,12 +60,12 @@ function Home() {
         title: '🔎',
         onClick: Search,
       })}
-      <select>
-      <option value=''>localização</option>
-      <option value='zs'>zona sul</option>
-      <option value='zn'>zona norte</option>
-      <option value='zo'>zona oeste</option>
-      <option value='zl'>zona leste</option>
+      <select class ="location" onchange = "window.home.filterLocation()">
+      <option value='1'>localização</option>
+      <option value='zona sul'>zona sul</option>
+      <option value='zona norte'>zona norte</option>
+      <option value='zona oeste'>zona oeste</option>
+      <option value='zona leste'>zona leste</option>
       <option value='center'>centro</option>
       </select>
       ${Input({
@@ -127,6 +127,27 @@ function filterPrice() {
     })
 }
 
+function filterLocation() {
+  document.querySelector('.all').innerHTML = '';
+  const options = document.querySelector('.location').value;
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+    .then(response => response.json())
+    .then(data => {
+      data.map((locations) => {
+        if (options == locations.theater_zone) {
+          window.home.cards(locations)
+        } 
+          else{
+            document.querySelector('.all').innerHTML = `
+            <p>Não encontramos nenhuma peça nessa localização!</p>
+            `
+          }
+      }
+    )
+  })
+}
+
+
 function Search() {
   const keyWord  = document.querySelector('.input').value;
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
@@ -136,7 +157,7 @@ function Search() {
     document.querySelector('.all').innerHTML = '';
     filter.forEach((item) => window.home.cards(item) );
     }
-  )
+  );
 }
 
 function About() {
@@ -154,8 +175,8 @@ function Contact() {
 
 window.home = {
   cards, 
-  filterPrice
+  filterPrice,
+  filterLocation
 }
 
 export {Home, getTheaterApi} ;
-

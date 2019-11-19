@@ -195,6 +195,17 @@ div.destaque{
 
 }
 
+.buy {
+display: flex;
+align-items: flex-end;
+background-color:green;
+height: 20px;
+
+}
+
+.btn-buy {
+}
+
 /* form indicação de peça */
 .forms{
   display: flex;

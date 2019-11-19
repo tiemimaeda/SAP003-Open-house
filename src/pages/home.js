@@ -101,15 +101,16 @@ function Home() {
 
 function cards(allData) {
   document.querySelector('.all').innerHTML += `
-  ${ListCard({
-    class: 'listcard',
-    img: allData.photo_url,
-    name: allData.name,
-    price: allData.price,
-    classification: allData.parental_raiting,
-    theater: allData.theater_name,
-  })}
-  `
+    ${ListCard({
+      id: allData.ticket_url, 
+      class: 'listcard',
+      img: allData.photo_url,
+      name: allData.name,
+      price: allData.price,
+      classification: allData.parental_raiting,
+      theater: allData.theater_name,
+    })}
+   `
 }
 
 function filterPrice() {
@@ -145,7 +146,6 @@ function filterLocation() {
       data.map((locations) => {
         if (options == locations.theater_zone) {
           window.home.cards(locations)
-          console.log(locations)
         } 
       }
     )
@@ -164,6 +164,8 @@ function Search() {
     }
   );
 }
+
+
 
 function About() {
   window.location.hash = 'about'

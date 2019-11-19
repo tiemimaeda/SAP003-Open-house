@@ -85,14 +85,14 @@ function Home() {
       <option value='zona leste'>zona leste</option>
       <option value='centro'>centro</option>
       </select>
-      <div class='filter-date'>
+      <form class='filter-date' onchange="window.home.filterDate()">
       ${Input({
         class: 'date-input',
         placeholder: '',
         type: 'date',
         })}
-        </div>
-      <select id="price" class='filter-value' onchange="window.home.filterPrice()">
+      </form>
+     <select id="price" class='filter-value' onchange="window.home.filterPrice()">
       <option value='Vai dar certo'>valor</option>
       <option value='gratuito'>Gratuito</option>
       <option value='R$50,00'>Até R$50,00</option>
@@ -179,7 +179,6 @@ function filterLocation() {
   })
 }
 
-
 function Search() {
   const keyWord  = document.querySelector('.input').value;
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
@@ -190,6 +189,27 @@ function Search() {
     filter.forEach((item) => window.home.cards(item) );
     }
   );
+}
+
+
+function filterDate() {
+  document.querySelector('.date').innerHTML = '';
+  document.querySelector('.all').innerHTML = '';
+  const dateFilter = document.querySelector('.date').value;
+  const d = new Date(dateFilter)
+  const date = d.getDate()+1;
+  const month = d.getMonth()+1;
+  const year = d.getFullYear();
+  const dateResult = date + "/" + month + "/" + year;
+
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+  .then(response => response.json())
+    .then(data => {
+      data.map((item) => {
+        if(item.date.includes(dateResult)){
+          window.home.cards(item)
+        }})
+    })
 }
 
 function About() {
@@ -208,7 +228,8 @@ function Contact() {
 window.home = {
   cards, 
   filterPrice,
-  filterLocation
+  filterLocation,
+  filterDate,
 }
 
 export {Home, getTheaterApi} ;

@@ -99,7 +99,6 @@ function cards(allData) {
   `
 }
 
-
 function filterPrice() {
   document.querySelector('.all').innerHTML = '';
   const option = document.querySelector('#price').value;

@@ -59,37 +59,35 @@ function Home() {
       <div class="search">
       <div class = 'search-by-name'>
         ${Input({
-        class: 'input ',
-        placeholder: 'Pesquise aqui',
+        class: 'input search-input',
+        placeholder: 'Pesquise pelo nome',
         type: 'text',
         })}
         ${Button({
           id: 'search',
           class:'btn-search',
-          title: '🔎',
+          title: '🔎', 
           onClick: Search,
         })}
       </div>
+      <p class='or'> -ou- </p>
       <div class='select-filters'>
-      <select>
-      <div class='filter-location'>
+      <select class='filter-location'>
       <option value=''>localização</option>
       <option value='zs'>zona sul</option>
       <option value='zn'>zona norte</option>
       <option value='zo'>zona oeste</option>
       <option value='zl'>zona leste</option>
       <option value='center'>centro</option>
-      </div>
       </select>
       <div class='filter-date'>
       ${Input({
-        class: 'data ',
+        class: 'date-input',
         placeholder: '',
         type: 'date',
         })}
         </div>
-        <select>
-        <div class='filter-value'>
+        <select class='filter-value'>
       <option value=''>valor</option>
       <option value='free'>Gratuito</option>
       <option value='50'>Até R$50,00</option>
@@ -97,8 +95,9 @@ function Home() {
       <option value='+100'>Acima de R$100,00</option>
       </select>
       </div>
+      <div class='list-plays'>
+        <div class='teste'></div>
       </div>
-      <div class='teste'></div>
       </div>
     </section>
   </div>
@@ -109,7 +108,6 @@ function Home() {
   return template;
 }
 
-
 function cards(allData) {
   document.querySelector('.teste').innerHTML += `
   ${ListCard({
@@ -117,11 +115,10 @@ function cards(allData) {
     img: allData.photo_url,
     price: allData.price,
     classification: allData.parental_raiting,
-    date: allData.date .join(', '),
+    date: allData.date.join(', '),
     class: 'listcard',
   })}
   `
-
 }
 
 function Search() {

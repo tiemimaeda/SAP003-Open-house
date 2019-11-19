@@ -1,7 +1,7 @@
 function Button(props) {
   const template = `
     <button
-      class="${props.class}-button"
+      class="${props.class}"
       type="submit"
       data-id=${props.id}
       onclick="button.handleClick(event, ${props.onClick})" >

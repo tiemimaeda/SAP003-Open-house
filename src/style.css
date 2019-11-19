@@ -66,17 +66,19 @@ label[for="btn-menu"] {
 
 .logo{
   width: 60%;
+  height: 100%;
+  
 }
 
 
 /*card dos destaques*/
 div.destaque{
-  width: 90vw;
+  width: 95vw;
   height: 300px;
   display: flex;
   flex-direction:column;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
   background-color: #333333;
 } 
 
@@ -86,25 +88,9 @@ div.destaque{
   background-color: #bf8164;
 }
 
-/* .card {
-  display: flex;
-  flex-flow: column;
-  width: 30%;
-  border-radius: 10px;
-  border:1px solid #E85531;
-  align-items: center;
-} */
-/* .card-name {
-  width: 100%;
- justify-content: center;
-  font-weight: bolder;
-  background-color:#E85531;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-} */
 
 
-/* cards todas as peças */
+/* todas as peças filtros*/
 .text-simple {
   text-align: center;
   padding: 2%;
@@ -112,45 +98,92 @@ div.destaque{
   color: #ffffff;
 } 
 
+.search {
+  background-color: #333333;
+}
+
 .all-plays{
-  width: 90vw;
-  height: 800px;
+  width: 95vw;
   display: flex;
   flex-direction:column;
   align-items: center;
-  margin: 20px;
-  background-color: #333333;
+  margin: 10px;
 }
 
 .search-by-name{
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 10px 0px 5px 0px;
   background-color: #333333;
-
 }
 
 .btn-search{
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #eee;
+}
+
+.or{
+  color: #ffffff;
+  text-align: center;
+}
+.select-filters{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px 10px 10px 10px;
+}
+
+.filter-location, .filter-value{
+  width: 33%;
+  border-radius: 20px;
+  padding-left: 8px;
+}
+
+.date-input{
   width: 100px;
+  border-radius: 20px;  
 }
-.card-image {
-  width: 90%;
+
+
+/* cards todas as peças */
+.teste{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 500px;
   height: auto;
-}
-.card-time {
-  font-size: 70%;
-  border: none;
-  border-radius: 10px 10px 0 0 ;
-  background-color:#E85531;
-  padding: 2% 2% 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 20px;
 }
 
 .listcard {
   display: flex;
-  flex-flow: column;
-  width: 80%;
+  flex-direction: row;
+  width: 90%;
+  min-height: 90px;
   border-radius: 10px;
   border:1px solid #E85531;
+  background-color: #fff;
+  margin-top: 15px;
+}
+
+.card-image {
+  width: 40%;
+  height: 100%;
+}
+
+.card-image img {
+  width: 100%;
+}
+
+.card-time {
+  font-size: 70%;
+  border: none;
+  border-radius: 10px 10px 0 0 ;
+  background-color:#E85531;  
 }
 
 /* form indicação de peça */
@@ -160,29 +193,30 @@ div.destaque{
   padding: 3% 0;
   align-items: center;
 }
+
 /* input pág de indicação */
 .input  {
   width: auto;
   border-radius: 15px;
-  padding: 5px;
-  margin: 0 3% 5%;
+  padding: 4px;
+}
+.search-input{
+margin: 0px 10px;
 }
 
-.select-filters{
+ /* .card {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.filter-location{
-  width: 30px;
-}
-
-.filter-date{
-  width: 5px;
-}
-
-.filter-value{
-  width: 30px;
-}
+  width: 30%;
+  border-radius: 10px;
+  border:1px solid #E85531;
+  align-items: center;  
+}  */
+/* .card-name {
+  width: 100%;
+ justify-content: center;
+  font-weight: bolder;
+  background-color:#E85531;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+} */

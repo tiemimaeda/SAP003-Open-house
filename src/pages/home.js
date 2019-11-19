@@ -4,25 +4,18 @@ import Card from '../components/card.js';
 import Menu from '../components/menu.js';
 import ListCard from '../components/listcard.js';
 
-window.onload = () => {
-  getTheaterApi();
-/*   Home();
-  cards(); */
 
-  
-  }
-  const getTheaterApi = () => {
-    fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
-    .then(response => response.json())
-    .then((data) => {
-      data.map(api => {
-        let allData = api;
-        cards(allData)
-      })
-    })
-  }
-
-
+const getTheaterApi = () => {
+  fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
+  .then(response => response.json())
+  .then((data) => {
+    data.map((api) =>  {
+      const allData = api;
+      cards(allData);
+      return allData;
+  })
+ })
+}
 
 function Home() {
   const template = `
@@ -72,12 +65,12 @@ function Home() {
       </div>
       <p class='or'> -ou- </p>
       <div class='select-filters'>
-      <select class='filter-location'>
-      <option value=''>localização</option>
-      <option value='zs'>zona sul</option>
-      <option value='zn'>zona norte</option>
-      <option value='zo'>zona oeste</option>
-      <option value='zl'>zona leste</option>
+      <select class ="location" onchange = "window.home.filterLocation()">
+      <option value='1'>localização</option>
+      <option value='zona sul'>zona sul</option>
+      <option value='zona norte'>zona norte</option>
+      <option value='zona oeste'>zona oeste</option>
+      <option value='zona leste'>zona leste</option>
       <option value='center'>centro</option>
       </select>
       <div class='filter-date'>
@@ -86,19 +79,17 @@ function Home() {
         placeholder: '',
         type: 'date',
         })}
-        </div>
-        <select class='filter-value'>
-      <option value=''>valor</option>
-      <option value='free'>Gratuito</option>
-      <option value='50'>Até R$50,00</option>
-      <option value='100'>R$50,00 - R$ 100,00</option>
-      <option value='+100'>Acima de R$100,00</option>
+      <select id="price" class='filter-value' onchange="window.home.filterPrice()">
+      <option value='Vai dar certo'>valor</option>
+      <option value='gratuito'>Gratuito</option>
+      <option value='R$50,00'>Até R$50,00</option>
+      <option value='R$100,00'>Até R$100,00</option>
+      <option value='R$100,01'>Acima de R$100,00</option>
       </select>
       </div>
-      <div class='list-plays'>
-        <div class='teste'></div>
+<div class='list-plays'>
       </div>
-      </div>
+      <div class="all list-plays"></div>
     </section>
   </div>
   </div>
@@ -109,8 +100,7 @@ function Home() {
 }
 
 function cards(allData) {
-  document.querySelector('.teste').innerHTML += `
-  
+  document.querySelector('.all').innerHTML += `
   ${ListCard({
     class: 'listcard',
     img: allData.photo_url,
@@ -122,8 +112,61 @@ function cards(allData) {
   `
 }
 
+function filterPrice() {
+  document.querySelector('.all').innerHTML = '';
+  const option = document.querySelector('#price').value;
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+    .then(response => response.json())
+    .then(data => {
+      data.map((item) => {
+        if (option == item.price ) {
+          window.home.cards(item) ;
+        }
+        else if (option == "R$50,00" && 50 > parseInt(item.price.replace(/\D/g,''))/100) {
+            window.home.cards(item);
+        }
+        else if (option == "R$100,00" && 100 >= parseInt(item.price.replace(/\D/g,''))/100){
+          window.home.cards(item);
+        }
+        else if (option == "R$100,01" && 101 < parseInt(item.price.replace(/\D/g,''))/100) {
+          window.home.cards(item);
+        }
+      })
+    })
+
+}
+
+function filterLocation() {
+  document.querySelector('.all').innerHTML = '';
+  const options = document.querySelector('.location').value;
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+    .then(response => response.json())
+    .then(data => {
+      data.map((locations) => {
+        if (options == locations.theater_zone) {
+          window.home.cards(locations)
+        } 
+          else{
+            document.querySelector('.all').innerHTML = `
+            <p>Não encontramos nenhuma peça nessa localização!</p>
+            `
+          }
+      }
+    )
+  })
+}
+
+
 function Search() {
-  console.log('pesquisar ok')
+  const keyWord  = document.querySelector('.input').value;
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+  .then(response => response.json())
+  .then(data => {
+    const filter  = data.filter((item) => item.name.includes(keyWord)); 
+    document.querySelector('.all').innerHTML = '';
+    filter.forEach((item) => window.home.cards(item) );
+    }
+  );
 }
 
 function About() {
@@ -138,8 +181,11 @@ function Contact() {
   window.location.hash = 'contact'
 };
 
+
 window.home = {
-  cards,
+  cards, 
+  filterPrice,
+  filterLocation
 }
 
-export default Home;
+export {Home, getTheaterApi} ;

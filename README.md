@@ -1,4 +1,4 @@
-# Rede Social Heroínas
+# Uni Teatro
 
 ## Índice
 - [Rede Social Heroínas](#rede-social-heroínas)

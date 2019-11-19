@@ -5,6 +5,8 @@ function Contact() {
   <div class="template">
   <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
   <input type="checkbox" id="btn-menu"/>
+  <label for="btn-back" class="btn-voltar" 
+  onClick="window.location.hash = 'home';">&crarr;</label>
   <label for="btn-menu">&#9776;</label>
   <nav class="menu">
     <ul>
@@ -24,8 +26,8 @@ function Contact() {
   </nav>  
   <section class = "profile-section">
   <img src="./Imagens/handshake.png" class='handshake-icon'>
-    <p class="alert-message">Para parcerias, sugestões ou feedbacks, entre em contato por email.</p>
-    <a href='mailto:giovanna.olivelima@gmail.com'>uniteatro@gmail.com</a>
+    <p class="alert-message text-contact">Para parcerias, sugestões ou feedbacks, entre em contato por email.</p>
+    <a href='mailto:giovanna.olivelima@gmail.com' class='email-link'>uniteatro@gmail.com</a>
     </section>
 </div>
   `;

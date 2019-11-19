@@ -5,6 +5,8 @@ function AboutUs() {
   <div class="template">
   <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
   <input type="checkbox" id="btn-menu"/>
+  <label for="btn-back" class="btn-voltar" 
+  onClick="window.location.hash = 'home';">&crarr;</label>
   <label for="btn-menu">&#9776;</label>
   <nav class="menu">
     <ul>

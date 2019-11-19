@@ -5,8 +5,10 @@ import Menu from '../components/menu.js';
 function Indicate() {
   const template = `
   <div class="template">
-  <header class="header"><img class="logo" src="./Imagens/Logo.png"></header>
+  <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
   <input type="checkbox" id="btn-menu"/>
+  <label for="btn-back" class="btn-voltar" 
+  onClick="window.location.hash = 'home';">&crarr;</label>
   <label for="btn-menu">&#9776;</label>
   <nav class="menu">
     <ul>
@@ -25,34 +27,35 @@ function Indicate() {
     </ul> 
   </nav>  
     <section class = "register-section">
-      <h1 class="name-network">Indicação</h1>
-      <h3 class="text-simple">Conhece ou participará de uma peça que ainda não está no site!</h3>
-      <h4 class="text-simple">Envie para nós!</h4>
+    <div class='text-description-indicate'>
+      <h3 class="text-indicate">Conhece ou participa de um expetáculo que ainda não está no site?</h3>
+      <h4 class="text-indicate send-message">Envie para nós!</h4>
+    </div>
       <form class="forms">
-        <label>Nome da peça :</label>      
+        <label class='title-indicate'>Nome da peça :</label>      
         ${Input({
-        class: 'name-input',
+        class: 'name-input input-indicate',
         placeholder: 'Peça 1',
         value:'',
         type: 'text',
         })}
-        <label> nome da companhia:</label> 
+        <label class='title-indicate'> nome da companhia:</label> 
         ${Input({
-        class: 'job-input',
+        class: 'job-input input-indicate',
         placeholder: 'Teatro 1',
         value:'',
         type: 'text',
         })}
-        <label>Contato :</label> 
+        <label class='title-indicate'>Contato :</label> 
         ${Input({
-        class: 'email-input',
+        class: 'email-input input-indicate',
         placeholder:'exemplo@seudomínio.com',
         value:'',
         type: 'text',
         })}
-        <label>Data da peça :</label> 
+        <label class='title-indicate'>Data da peça :</label> 
         ${Input({
-        class: 'birth-date-input',
+        class: 'birth-date-input input-indicate',
         placeholder: '',
         value:'',
         type: 'date',
@@ -60,7 +63,7 @@ function Indicate() {
       <p class="alert-message"></p>
           ${Button({
         id: 'btncreate-count',
-        class:'',
+        class:' button-send-green',
         title: 'Enviar',
         onClick: sendIndicate,
       })}

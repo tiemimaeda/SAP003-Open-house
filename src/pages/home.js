@@ -9,14 +9,13 @@ const getTheaterApi = () => {
   fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
   .then(response => response.json())
   .then((data) => {
-    data.map(api => {
-      let allData = api;
-      cards(allData)
-    })
+    data.map((api) =>  {
+      const allData = api;
+      cards(allData);
+      return allData;
   })
+ })
 }
-
-
 
 function Home() {
   const template = `
@@ -74,12 +73,12 @@ function Home() {
         placeholder: '',
         type: 'date',
         })}
-      <select>
-      <option value=''>valor</option>
-      <option value='free'>Gratuito</option>
-      <option value='50'>Até R$50,00</option>
-      <option value='100'>R$50,00 - R$ 100,00</option>
-      <option value='+100'>Acima de R$100,00</option>
+      <select id="price" onchange="window.home.filterPrice()">
+      <option value='Vai dar certo'>valor</option>
+      <option value='gratuito'>Gratuito</option>
+      <option value='R$50,00'>Até R$50,00</option>
+      <option value='R$100,00'>Até R$100,00</option>
+      <option value='R$100,01'>Acima de R$100,00</option>
       </select>
       </div>
       <div class="all"></div>
@@ -103,6 +102,29 @@ function cards(allData) {
     class: 'listcard',
   })}
   `
+}
+
+function filterPrice() {
+  document.querySelector('.all').innerHTML = '';
+  const option = document.querySelector('#price').value;
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+    .then(response => response.json())
+    .then(data => {
+      data.map((item) => {
+        if (option == item.price ) {
+          window.home.cards(item) ;
+        }
+        else if (option == "R$50,00" && 50 > parseInt(item.price.replace(/\D/g,''))/100) {
+            window.home.cards(item);
+        }
+        else if (option == "R$100,00" && 100 >= parseInt(item.price.replace(/\D/g,''))/100){
+          window.home.cards(item);
+        }
+        else if (option == "R$100,01" && 101 < parseInt(item.price.replace(/\D/g,''))/100) {
+          window.home.cards(item);
+        }
+      })
+    })
 }
 
 function Search() {
@@ -131,7 +153,8 @@ function Contact() {
 
 
 window.home = {
-  cards
+  cards, 
+  filterPrice
 }
 
 export {Home, getTheaterApi} ;

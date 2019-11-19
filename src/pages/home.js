@@ -65,13 +65,13 @@ function Home() {
       </div>
       <p class='or'> -ou- </p>
       <div class='select-filters'>
-      <select class ="location" onchange = "window.home.filterLocation()">
+      <select class ="filter-location" id='location' onchange = "window.home.filterLocation()">
       <option value='1'>localização</option>
       <option value='zona sul'>zona sul</option>
       <option value='zona norte'>zona norte</option>
       <option value='zona oeste'>zona oeste</option>
       <option value='zona leste'>zona leste</option>
-      <option value='center'>centro</option>
+      <option value='centro'>centro</option>
       </select>
       <div class='filter-date'>
       ${Input({
@@ -79,6 +79,7 @@ function Home() {
         placeholder: '',
         type: 'date',
         })}
+        </div>
       <select id="price" class='filter-value' onchange="window.home.filterPrice()">
       <option value='Vai dar certo'>valor</option>
       <option value='gratuito'>Gratuito</option>
@@ -87,8 +88,7 @@ function Home() {
       <option value='R$100,01'>Acima de R$100,00</option>
       </select>
       </div>
-<div class='list-plays'>
-      </div>
+      <div class='list-plays'>
       <div class="all list-plays"></div>
     </section>
   </div>
@@ -138,19 +138,15 @@ function filterPrice() {
 
 function filterLocation() {
   document.querySelector('.all').innerHTML = '';
-  const options = document.querySelector('.location').value;
+  const options = document.querySelector('#location').value;
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
     .then(response => response.json())
     .then(data => {
       data.map((locations) => {
         if (options == locations.theater_zone) {
           window.home.cards(locations)
+          console.log(locations)
         } 
-          else{
-            document.querySelector('.all').innerHTML = `
-            <p>Não encontramos nenhuma peça nessa localização!</p>
-            `
-          }
       }
     )
   })

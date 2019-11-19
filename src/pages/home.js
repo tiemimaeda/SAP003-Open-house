@@ -14,7 +14,21 @@ const getTheaterApi = () => {
       cards(allData);
       return allData;
   })
+  getTheater();
  })
+}
+
+
+const getTheater = () => {
+  fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
+  .then(response => response.json())
+  .then((data) => {
+    const arr = [5,6,9];
+    for (let i=0; arr.length>= i; i++) {
+      cardsHighlight(data[arr[i]])
+    
+    }
+  })
 }
 
 function Home() {
@@ -43,7 +57,9 @@ function Home() {
     <section>
     <div class='destaque'>
       <h3 class="text-simple">Peças em destaque</h3>
-      <div class="highlight"></div>
+      <div class="highlight">
+     
+      </div>
     </section>
     </div>
     <section>
@@ -61,12 +77,12 @@ function Home() {
         onClick: Search,
       })}
       <select class ="location" onchange = "window.home.filterLocation()">
-      <option value='1'>localização</option>
+      <option value=''>localização</option>
       <option value='zona sul'>zona sul</option>
       <option value='zona norte'>zona norte</option>
       <option value='zona oeste'>zona oeste</option>
       <option value='zona leste'>zona leste</option>
-      <option value='center'>centro</option>
+      <option value='centro'>centro</option>
       </select>
       ${Input({
         class: 'data ',
@@ -88,6 +104,19 @@ function Home() {
   `;
   location.hash = 'home';
   return template;
+}
+
+function cardsHighlight(allData) {
+  document.querySelector('.highlight').innerHTML += `
+  ${Card({
+    class: 'card',
+    name: allData.name,
+    img: allData.photo_url,
+    price: allData.price,
+    classification: allData.parental_raiting,
+    date: allData.date,
+  })}
+  `
 }
 
 function cards(allData) {
@@ -134,14 +163,11 @@ function filterLocation() {
     .then(response => response.json())
     .then(data => {
       data.map((locations) => {
+        console.log(locations.theater_zone);
+        
         if (options == locations.theater_zone) {
           window.home.cards(locations)
         } 
-          else{
-            document.querySelector('.all').innerHTML = `
-            <p>Não encontramos nenhuma peça nessa localização!</p>
-            `
-          }
       }
     )
   })

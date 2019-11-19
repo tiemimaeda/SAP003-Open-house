@@ -17,7 +17,7 @@
 
 
 /*card dos destaques*/
-.destaque{
+.container{
   display: flex;
   flex-direction:column;
   width: 90%;

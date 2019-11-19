@@ -18,17 +18,15 @@ const getTheaterApi = () => {
  })
 }
 
-
 const getTheater = () => {
   fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
   .then(response => response.json())
   .then((data) => {
-    const arr = [5,6,9];
+    const arr = [5,4,9];
     for (let i=0; arr.length>= i; i++) {
       cardsHighlight(data[arr[i]])
-    
     }
-  })
+  });
 }
 
 function Home() {
@@ -114,9 +112,9 @@ function Home() {
 }
 
 function cardsHighlight(allData) {
-  document.querySelector('.highlight').innerHTML += `
+  document.querySelector('.caroussel').innerHTML += `
   ${Card({
-    class: 'card',
+    class: 'card-destaque',
     name: allData.name,
     img: allData.photo_url,
     price: allData.price,

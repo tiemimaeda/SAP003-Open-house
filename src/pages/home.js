@@ -68,11 +68,13 @@ function Home() {
       <option value='zona leste'>zona leste</option>
       <option value='center'>centro</option>
       </select>
+      <form onchange = "window.home.filterDate()">
       ${Input({
-        class: 'data ',
+        class: 'date',
         placeholder: '',
         type: 'date',
         })}
+      </form>
       <select id="price" onchange="window.home.filterPrice()">
       <option value='Vai dar certo'>valor</option>
       <option value='gratuito'>Gratuito</option>
@@ -98,7 +100,7 @@ function cards(allData) {
     img: allData.photo_url,
     price: allData.price,
     classification: allData.parental_raiting,
-    date: allData.date .join(', '),
+    date: allData.date,
     class: 'listcard',
   })}
   `
@@ -147,7 +149,6 @@ function filterLocation() {
   })
 }
 
-
 function Search() {
   const keyWord  = document.querySelector('.input').value;
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
@@ -158,6 +159,27 @@ function Search() {
     filter.forEach((item) => window.home.cards(item) );
     }
   );
+}
+
+
+function filterDate() {
+  document.querySelector('.date').innerHTML = '';
+  document.querySelector('.all').innerHTML = '';
+  const dateFilter = document.querySelector('.date').value;
+  const d = new Date(dateFilter)
+  const date = d.getDate()+1;
+  const month = d.getMonth()+1;
+  const year = d.getFullYear();
+  const dateResult = date + "/" + month + "/" + year;
+
+  fetch('https://open-house-309f5.firebaseio.com/plays.json')
+  .then(response => response.json())
+    .then(data => {
+      data.map((item) => {
+        if(item.date.includes(dateResult)){
+          window.home.cards(item)
+        }})
+    })
 }
 
 function About() {
@@ -176,7 +198,8 @@ function Contact() {
 window.home = {
   cards, 
   filterPrice,
-  filterLocation
+  filterLocation,
+  filterDate,
 }
 
 export {Home, getTheaterApi} ;

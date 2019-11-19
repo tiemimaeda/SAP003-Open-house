@@ -110,13 +110,14 @@ function Home() {
 
 function cards(allData) {
   document.querySelector('.teste').innerHTML += `
+  
   ${ListCard({
-    name: allData.name,
+    class: 'listcard',
     img: allData.photo_url,
+    name: allData.name,
     price: allData.price,
     classification: allData.parental_raiting,
-    date: allData.date.join(', '),
-    class: 'listcard',
+    theater: allData.theater_name,
   })}
   `
 }

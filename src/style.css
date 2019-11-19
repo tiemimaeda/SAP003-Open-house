@@ -152,7 +152,7 @@ div.destaque{
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 500px;
+  max-height: 300px;
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -162,17 +162,20 @@ div.destaque{
 .listcard {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  min-height: 90px;
+  width: 95%;
+  min-height: 120px;
   border-radius: 10px;
-  border:1px solid #E85531;
   background-color: #fff;
   margin-top: 15px;
 }
 
 .card-image {
+  justify-content: row;
+  align-self: center;
+  max-height: 110px;
   width: 40%;
-  height: 100%;
+  height: 100px;
+  margin-right: 10px;
 }
 
 .card-image img {
@@ -184,6 +187,12 @@ div.destaque{
   border: none;
   border-radius: 10px 10px 0 0 ;
   background-color:#E85531;  
+}
+
+.card-name{
+  display: flex;
+  flex-direction: row;
+
 }
 
 /* form indicação de peça */
@@ -204,19 +213,127 @@ div.destaque{
 margin: 0px 10px;
 }
 
- /* .card {
+ .card {
   display: flex;
   flex-direction: row;
   width: 30%;
   border-radius: 10px;
   border:1px solid #E85531;
   align-items: center;  
-}  */
-/* .card-name {
-  width: 100%;
- justify-content: center;
+} 
+
+.card-info{
+display: flex;
+flex-direction: column;
+max-height: 80px;
+}
+
+.card-name {
   font-weight: bolder;
-  background-color:#E85531;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-} */
+  font-size: 15px; 
+}
+
+.card-price, .card-classification,  .card-theatre{
+font-size: 15px;
+}
+
+
+/* about us */
+
+.aboutUs{
+  background-image: url(./Imagens/theater.jpg);
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  align-items: center;
+
+}
+
+.about-us-container{
+  width: 85%;
+  height: 90%;
+  align-self: center;
+  background-color: rgba(12, 12, 12, 0.76); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-info{
+  width: 80%; 
+}
+
+.name-network{
+  margin-left: 18%;
+}
+
+.title-about-us{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px 10px 0px;
+}
+
+/* indicação */
+.register-section{
+  width: 100vw;
+  height: 90vh;
+  background-color: #adadad;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-description-indicate{
+  align-self: center;
+  width: 70%;
+  
+}
+
+.send-message{
+  margin-left: 60px;
+  margin-bottom: 30px;
+}
+
+.forms{
+  margin-left: 35px;
+  width: 80%;
+  background-color: #333333;
+}
+
+.title-indicate{
+  color: rgb(255, 253, 253);
+}
+
+.input-indicate{
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.button-send-green{
+  width: 60px;
+  background-color: rgb(93, 199, 98);
+}
+
+/* contato */
+.profile-section{
+  background-color: #adadad;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.alert-message{
+  align-self: center;
+  width: 70%;
+  
+}
+
+.handshake-icon{
+  margin-top: 100px;
+  align-self: center;
+  width: 40%;
+}

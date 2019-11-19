@@ -29,7 +29,7 @@ function AboutUs() {
     <div class='about-us-info'>
       <h1 class="name-network">Quem somos?</h1>
       <h3 class="title-about-us">Missão</h3>
-      <p class="alert-message">Facilitar a divulgação de peças e espetáculos gratuitos e pagos de diversas companhia teatrais, de forma simples e transparente</p>
+      <p class="alert-message">Facilitar a divulgação de peças e espetáculos gratuitos e pagos de diversas companhias teatrais, de forma simples e transparente</p>
       <h3 class="title-about-us">Visão</h3>
       <p class="alert-message">Aumentar o número de pessoas que frequentam teatro</p>
       <h3 class="title-about-us">Valores</h3>

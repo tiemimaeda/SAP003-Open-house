@@ -13,14 +13,14 @@
 
 /* menu-hamburguer*/
 #btn-menu:checked ~ .menu{
-  margin-top: 0%;
   margin-left: 57%;
   display: block;
 }
 
 .btn-voltar{
-  position: fixed;
-  font-size: 35px;
+  position: absolute;
+  left: 15px;
+  font-size: 30px;
   color: white;
 }
 
@@ -124,7 +124,7 @@ div.destaque{
   display: flex;
   flex-direction:column;
   align-items: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 .search-by-name{
@@ -165,7 +165,7 @@ div.destaque{
 
 
 /* cards todas as peças */
-.teste{
+.all{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -212,16 +212,40 @@ div.destaque{
 
 }
 
-.buy {
-display: flex;
-align-items: flex-end;
-background-color:green;
-height: 20px;
-
+.location-icon{
+  color: #757474;
 }
-
 .btn-buy {
+  background-color:green;
+  color: #fff;
+  margin:0px 10px 5px 0px;
+  height: 20px;
 }
+
+.partners{
+  background-color: #adadad;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partners-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.partners-title{
+  text-align: center;
+  font-size: 25px;
+  margin: 20px 0px 20px 0px;
+  text-decoration:underline;
+}
+.image-partner{
+  width: 130px;
+ margin-bottom: 40px; 
+}
+
 
 /* form indicação de peça */
 .forms{
@@ -253,18 +277,36 @@ margin: 0px 10px;
 .card-info{
 display: flex;
 flex-direction: column;
-max-height: 80px;
+width: 100%;
+justify-content: center;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .card-name {
+  min-height: 35px;
+  max-height: 35px;
   font-weight: bolder;
   font-size: 15px; 
 }
 
-.card-price, .card-classification,  .card-theatre{
-font-size: 15px;
+.card-theatre{
+  font-size: 12px;
 }
 
+.card-classification{
+  width: 25px;
+  margin: 2px 0px 2px 0px;
+}
 
 /* about us */
 

@@ -3,13 +3,12 @@ import Menu from '../components/menu.js';
 function AboutUs() {
   const template = `
   <div class="template">
-  <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
-  <input type="checkbox" id="btn-menu"/>
-  <label for="btn-back" class="btn-voltar" 
-  onClick="window.location.hash = 'home';">&crarr;</label>
-  <label for="btn-menu">&#9776;</label>
+  <header class="header"><label for="btn-back" class="btn-voltar" 
+  onClick="window.location.hash = 'home';" ><i class="far fa-arrow-alt-circle-left"></i></label><img class="logo" src="./Imagens/logo.png"></header>
+  <input type="checkbox" id="btn-menu" />
+  <label for="btn-menu" class="hamburguer-menu"><i class="fas fa-bars"></i></label>
   <nav class="menu">
-    <ul>
+  <ul>
     ${Menu({
       name: 'Home',
       link: Home,

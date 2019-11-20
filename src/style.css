@@ -88,9 +88,10 @@ div.destaque{
 } 
 
 .caroussel{
+  display: flex;
+  flex-direction: row;
   width: 90%;
   height: 80%;
-  background-color: #bf8164;
 }
 
 .card-destaque {
@@ -102,9 +103,11 @@ div.destaque{
   margin-top: 12px;
   margin-left: 4px;
   padding: 1px;
+  margin: 10px;
   font-weight: bold;
+  background-color: #bf8164;
+  padding: 5px;
 }
-
 
 
 /* todas as peças filtros*/
@@ -211,17 +214,17 @@ div.destaque{
   flex-direction: row;
 
 }
+.buy{
+  display: flex;
+  align-items: baseline;
+}
 
-.buy {
-display: flex;
-align-items: flex-end;
+.btn-buy {
 background-color:green;
 height: 20px;
 
 }
 
-.btn-buy {
-}
 
 /* form indicação de peça */
 .forms{

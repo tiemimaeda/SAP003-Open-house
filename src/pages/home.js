@@ -115,6 +115,7 @@ function cardsHighlight(allData) {
   document.querySelector('.caroussel').innerHTML += `
   ${Card({
     class: 'card-destaque',
+    id: allData.ticket_url, 
     name: allData.name,
     img: allData.photo_url,
     price: allData.price,
@@ -192,7 +193,7 @@ function Search() {
 }
 
 function filterDate() {
-  document.querySelector('.date').innerHTML = '';
+  document.querySelector('.date-input').innerHTML = '';
   document.querySelector('.all').innerHTML = '';
   const dateFilter = document.querySelector('.date').value;
   const d = new Date(dateFilter)

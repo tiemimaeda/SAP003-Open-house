@@ -420,26 +420,73 @@ justify-content: center;
   height:2%;
 }
 
+.menu-desktop{
+  display: none;
+}
+
+.menu{
+  display: flex;
+  top: 15px;
+  right: 5%;
+  position: absolute;
+  width: auto;
+}
+
+.menu ul {
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+
+}
+
+.menu ul li {
+  width: auto;
+  height: 50px;
+  cursor: pointer;
+}
+
+.menu ul li:hover{
+text-decoration-line: underline;
+}
+
+.return{
+  display: none;
+}
 .logo{
   width: 25%;
   max-height: 70px;
 }
 
 div.destaque{
-  max-width: 80%;
-  margin: 20px 100px 20px 100px;
+  margin: 20px 0px 10px 10px;
+  max-width: 100vw;
   height: 350px;
 }
 
 .caroussel{
-  width: 90%;
+  width: 97%;
   height: 70%;
 }
 
+.search{
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .all-plays{
-  max-width: 80%;
-  width: 90%;
-  margin: 20px 100px 20px 100px;
+  max-width: 100vw;
+  margin: 20px 0px 10px 10px;
+  
+}
+.select-filters{
+  margin-left: 30%;
+width: 40%;
+}
+
+.all{
+  max-height: 500px;
+  margin-bottom: 10px;
 }
 .listcard{
   margin-left: 20px;

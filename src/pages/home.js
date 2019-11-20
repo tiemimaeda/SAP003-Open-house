@@ -33,8 +33,8 @@ function Home() {
   const template = `
   <div class="template">
   <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
-  <input type="checkbox" id="btn-menu" />
-  <label for="btn-menu" class="hamburguer-menu">&#9776;</label>
+  <input type="checkbox" id="btn-menu" class='menu-desktop' />
+  <label for="btn-menu" class="hamburguer-menu menu-desktop"">&#9776;</label>
   <nav class="menu">
   <ul>
   ${Menu({
@@ -108,11 +108,10 @@ function Home() {
   <p class='partners-title'>Parceiros:</p>
   <div class='partners-container'>
  <img class='image-partner' src='https://www.macunaima.com.br/wp-content/themes/macunaima/images/logo-2015.png'>
- <img class='image-partner' src='https://www.teatrobradesco.com.br/img/logoTeatroBradescoRodape.png'> 
+ <img class='image-partner' src='https://upload.wikimedia.org/wikipedia/en/e/e7/Teatro_Bradesco.png'> 
  <img class='image-partner' src='http://teatroprocopioferreira.com.br/wp-content/uploads/2017/06/logo-teatro-procopio-1.png'>
  <img class='image-partner' src='https://m.sescsp.org.br/Content/img/logo.png'>
  <img class='image-partner' src='https://logodownload.org/wp-content/uploads/2018/10/sympla-logo-13.png'>
- <img class='image-partner' src='https://logodownload.org/wp-content/uploads/2017/11/tv-cultura-logo-6.png'>
  </div>
  </section>
   </div>

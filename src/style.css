@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-.main{
+.main {
   background-color: #adadad;
   display: flex;
   justify-content: center;
@@ -12,13 +12,13 @@
 }
 
 /* menu-hamburguer*/
-#btn-menu:checked ~ .menu{
+#btn-menu:checked~.menu {
   margin-top: 0%;
   margin-left: 57%;
   display: block;
 }
 
-.btn-voltar{
+.btn-voltar {
   position: fixed;
   font-size: 35px;
   color: white;
@@ -42,11 +42,13 @@ label[for="btn-menu"] {
   width: 100%;
   position: absolute;
 }
- .menu ul {
+
+.menu ul {
   list-style: none;
   position: relative;
   display: inline-block;
-} 
+}
+
 .menu ul li {
   width: 100%;
   float: none;
@@ -70,24 +72,24 @@ label[for="btn-menu"] {
   height: 5%;
 }
 
-.logo{
+.logo {
   width: 60%;
-  height: 100%; 
+  height: 100%;
 }
 
 
 /*card dos destaques*/
-div.destaque{
+div.destaque {
   width: 95vw;
   height: 300px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   margin: 10px;
   background-color: #333333;
-} 
+}
 
-.caroussel{
+.caroussel {
   width: 90%;
   height: 80%;
   background-color: #bf8164;
@@ -113,59 +115,61 @@ div.destaque{
   padding: 2%;
   background-color: #333333;
   color: #ffffff;
-} 
+}
 
 .search {
   background-color: #333333;
 }
 
-.all-plays{
+.all-plays {
   width: 95vw;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   margin: 10px;
 }
 
-.search-by-name{
+.search-by-name {
   display: flex;
   justify-content: center;
   padding: 10px 0px 5px 0px;
   background-color: #333333;
 }
 
-.btn-search{
+.btn-search {
   width: 35px;
   height: 35px;
   border-radius: 10px;
   background-color: #eee;
 }
 
-.or{
+.or {
   color: #ffffff;
   text-align: center;
 }
-.select-filters{
+
+.select-filters {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 5px 10px 10px 10px;
 }
 
-.filter-location, .filter-value{
+.filter-location,
+.filter-value {
   width: 33%;
   border-radius: 20px;
   padding-left: 8px;
 }
 
-.date-input{
+.date-input {
   width: 100px;
-  border-radius: 20px;  
+  border-radius: 20px;
 }
 
 
 /* cards todas as peças */
-.teste{
+.teste {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,29 +206,28 @@ div.destaque{
 .card-time {
   font-size: 70%;
   border: none;
-  border-radius: 10px 10px 0 0 ;
-  background-color:#E85531;  
+  border-radius: 10px 10px 0 0;
+  background-color: #E85531;
 }
 
-.card-name{
+.card-name {
   display: flex;
   flex-direction: row;
 
 }
 
 .buy {
-display: flex;
-align-items: flex-end;
-background-color:green;
-height: 20px;
+  display: flex;
+  align-items: flex-end;
+  background-color: green;
+  height: 20px;
 
 }
 
-.btn-buy {
-}
+.btn-buy {}
 
 /* form indicação de peça */
-.forms{
+.forms {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,43 +235,46 @@ height: 20px;
 }
 
 /* input pág de indicação */
-.input  {
+.input {
   width: auto;
   border-radius: 15px;
   padding: 4px;
 }
-.search-input{
-margin: 0px 10px;
+
+.search-input {
+  margin: 0px 10px;
 }
 
- .card {
+.card {
   display: flex;
   flex-direction: row;
   width: 30%;
   border-radius: 10px;
-  border:1px solid #E85531;
-  align-items: center;  
-} 
+  border: 1px solid #E85531;
+  align-items: center;
+}
 
-.card-info{
-display: flex;
-flex-direction: column;
-max-height: 80px;
+.card-info {
+  display: flex;
+  flex-direction: column;
+  max-height: 80px;
 }
 
 .card-name {
   font-weight: bolder;
-  font-size: 15px; 
+  font-size: 15px;
 }
 
-.card-price, .card-classification,  .card-theatre{
-font-size: 15px;
+.card-price,
+.card-classification,
+.card-theatre {
+  font-size: 15px;
 }
 
 
 /* about us */
 
-.aboutUs{
+.aboutUs {
   background-image: url(./Imagens/theater.jpg);
   width: 100vw;
   height: 90vh;
@@ -279,32 +285,32 @@ font-size: 15px;
 
 }
 
-.about-us-container{
+.about-us-container {
   width: 85%;
   height: 90%;
   align-self: center;
-  background-color: rgba(12, 12, 12, 0.76); 
+  background-color: rgba(12, 12, 12, 0.76);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.about-us-info{
-  width: 80%; 
+.about-us-info {
+  width: 80%;
 }
 
-.name-network{
+.name-network {
   align-self: center;
 }
 
-.title-about-us{
+.title-about-us {
   display: flex;
   justify-content: center;
   margin: 30px 0px 10px 0px;
 }
 
 /* indicação */
-.register-section{
+.register-section {
   width: 100vw;
   height: 90vh;
   background-color: #adadad;
@@ -313,143 +319,182 @@ font-size: 15px;
   justify-content: center;
 }
 
-.text-description-indicate{
+.text-description-indicate {
   align-self: center;
   width: 70%;
-  
+
 }
 
-.send-message{
+.send-message {
   margin-left: 60px;
   margin-bottom: 30px;
 }
 
-.forms{
+.forms {
   margin-left: 35px;
   width: 80%;
   background-color: #333333;
 }
 
-.title-indicate{
+.title-indicate {
   color: rgb(255, 253, 253);
 }
 
-.input-indicate{
+.input-indicate {
   width: 80%;
   margin-bottom: 20px;
 }
 
-.button-send-green{
+.button-send-green {
   width: 60px;
   background-color: rgb(93, 199, 98);
 }
 
 /* contato */
-.profile-section{
+.profile-section {
   background-color: #adadad;
   width: 100vw;
   height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
 }
 
-.alert-message{
+.alert-message {
   width: 100%;
   align-self: center;
 }
 
-.handshake-icon{
+.handshake-icon {
   margin-top: 100px;
   align-self: center;
   width: 40%;
 }
 
-.email-link{
+.email-link {
   display: flex;
   align-self: center;
   margin-top: 30px;
   color: #000000;
 }
 
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 768px) {
-.header{
-  height:2%;
-}
+  .header {
+    height: 2%;
+  }
 
-.logo{
-  width: 25%;
-  max-height: 70px;
-}
+  .logo {
+    width: 25%;
+    max-height: 70px;
+  }
 
-div.destaque{
-  max-width: 80%;
-  margin: 20px 100px 20px 100px;
-  height: 350px;
-}
+  div.destaque {
+    max-width: 80%;
+    margin: 20px 100px 20px 100px;
+    height: 350px;
+  }
 
-.caroussel{
-  width: 90%;
-  height: 70%;
-}
+  .caroussel {
+    width: 90%;
+    height: 70%;
+  }
 
-.all-plays{
-  max-width: 80%;
-  width: 90%;
-  margin: 20px 100px 20px 100px;
-}
-.listcard{
-  margin-left: 20px;
-}
+  .all-plays {
+    max-width: 80%;
+    width: 90%;
+    margin: 20px 100px 20px 100px;
+  }
 
-.card-image{
-  max-width: 250px;
-  height: 300px;
+  .listcard {
+    margin-left: 20px;
+  }
+
+  .card-image {
+    max-width: 250px;
+    height: 300px;
+
+  }
+
+
+
+  /* sobre */
+  .aboutUs {
+    background-image: url(./Imagens/theater_2.jpg);
+  }
+
+  .about-us-container {
+    width: 50%;
+  }
+
+  .about-us-info {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* indique uma peça */
+  .forms {
+    margin: 20px 100px 20px 100px;
+  }
+
+  .text-description-indicate {
+    margin-left: 250px;
+  }
+
+  .input-indicate {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .send-message {
+    margin-left: 250px;
+  }
+
+  .handshake-icon {
+    width: 15%;
+    margin-top: 10px;
+  }
+
+  .text-contact {
+    margin-left: 900px;
+  }
 
 }
-
-
- 
-/* sobre */
-.aboutUs{
-  background-image: url(./Imagens/theater_2.jpg) ;
-}
-
-.about-us-container{
-  width: 50%;
-}
-
-.about-us-info{
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* indique uma peça */
-.forms{
-  margin: 20px 100px 20px 100px;
-}
-
-.text-description-indicate{
-  margin-left: 250px;
-}
-
-.input-indicate{
-  width: 50%;
-  margin-bottom: 20px;
-}
-.send-message{
-  margin-left: 250px;
-}
-.handshake-icon{
-  width: 15%;
-  margin-top: 10px;
-}
-.text-contact{
-  margin-left:900px ;
-}
-  
-}
-

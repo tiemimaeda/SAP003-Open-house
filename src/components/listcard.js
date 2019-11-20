@@ -2,7 +2,7 @@ import Button from '../components/button.js';
 
 function ListCard(props) {
     const template = `
-    <li data-id='${props.id}' class="${props.class}">
+    <li data-id='${props.id}' class="${props.class}" onclick="window.home.showModal('${props.synopsis}')">
     <img class = "card-image"  src="${props.img}">
     <div class="card-info">
     <p class = "card-name">${props.name}</p>
@@ -19,14 +19,14 @@ function ListCard(props) {
       })}
     </div>
     </li>
-    `;  
+    `;
     return template;
 }
 
-function Buy(e){
+function Buy(e) {
     const option = e.target.dataset.id;
     window.location.href = `${option}`
 }
 
 window.Card = ListCard;
-export default  ListCard;
+export default ListCard;

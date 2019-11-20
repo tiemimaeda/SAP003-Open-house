@@ -115,6 +115,13 @@ function Home() {
  </div>
  </section>
   </div>
+
+  <div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p class="card-sinopse"></p>
+  </div>
+</div>
   `;
   location.hash = 'home';
   return template;
@@ -143,6 +150,7 @@ function cards(allData) {
       price: allData.price,
       classification: allData.parental_raiting,
       theater: allData.theater_name,
+      synopsis: allData.synopsis
     })}
    `
 }
@@ -233,12 +241,21 @@ function Contact() {
   window.location.hash = 'contact'
 };
 
+function showModal(s) {
+  let modal = document.querySelector('#myModal');
+  document.querySelector('.card-sinopse').innerHTML = s;
+  if (modal) {
+      modal.style.display = 'block';
+  }
+  
+}
 
 window.home = {
   cards, 
   filterPrice,
   filterLocation,
   filterDate,
+  showModal
 }
 
 export {Home, getTheaterApi} ;

@@ -71,7 +71,7 @@ function Home() {
         ${Button({
           id: 'search',
           class:'btn-search',
-          title: '🔎', 
+          title: '<i class="fas fa-search"></i>', 
           onClick: Search,
         })}
       </div>
@@ -100,11 +100,21 @@ function Home() {
       <option value='R$100,01'>Acima de R$100,00</option>
       </select>
       </div>
-      <div class='list-plays'>
       <div class="all list-plays"></div>
     </section>
   </div>
   </div>
+  <section class='partners'>
+  <p class='partners-title'>Parceiros:</p>
+  <div class='partners-container'>
+ <img class='image-partner' src='https://www.macunaima.com.br/wp-content/themes/macunaima/images/logo-2015.png'>
+ <img class='image-partner' src='https://www.teatrobradesco.com.br/img/logoTeatroBradescoRodape.png'> 
+ <img class='image-partner' src='http://teatroprocopioferreira.com.br/wp-content/uploads/2017/06/logo-teatro-procopio-1.png'>
+ <img class='image-partner' src='https://m.sescsp.org.br/Content/img/logo.png'>
+ <img class='image-partner' src='https://logodownload.org/wp-content/uploads/2018/10/sympla-logo-13.png'>
+ <img class='image-partner' src='https://logodownload.org/wp-content/uploads/2017/11/tv-cultura-logo-6.png'>
+ </div>
+ </section>
   </div>
   `;
   location.hash = 'home';
@@ -195,7 +205,7 @@ function Search() {
 function filterDate() {
   document.querySelector('.date-input').innerHTML = '';
   document.querySelector('.all').innerHTML = '';
-  const dateFilter = document.querySelector('.date').value;
+  const dateFilter = document.querySelector('.date-input').value;
   const d = new Date(dateFilter)
   const date = d.getDate()+1;
   const month = d.getMonth()+1;

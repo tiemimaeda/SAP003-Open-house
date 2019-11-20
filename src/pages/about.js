@@ -3,13 +3,12 @@ import Menu from '../components/menu.js';
 function AboutUs() {
   const template = `
   <div class="template">
-  <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
-  <input type="checkbox" id="btn-menu"/>
-  <label for="btn-back" class="btn-voltar" 
-  onClick="window.location.hash = 'home';">&crarr;</label>
-  <label for="btn-menu">&#9776;</label>
+  <header class="header"><label for="btn-back" class="btn-voltar" 
+  onClick="window.location.hash = 'home';" ><i class="far fa-arrow-alt-circle-left"></i></label><img class="logo" src="./Imagens/logo.png"></header>
+  <input type="checkbox" id="btn-menu" />
+  <label for="btn-menu" class="hamburguer-menu"><i class="fas fa-bars"></i></label>
   <nav class="menu">
-    <ul>
+  <ul>
     ${Menu({
       name: 'Home',
       link: Home,
@@ -29,7 +28,7 @@ function AboutUs() {
     <div class='about-us-info'>
       <h1 class="name-network">Quem somos?</h1>
       <h3 class="title-about-us">Missão</h3>
-      <p class="alert-message">Facilitar a divulgação de peças e espetáculos gratuitos e pagos de diversas companhia teatrais, de forma simples e transparente</p>
+      <p class="alert-message">Facilitar a divulgação de peças e espetáculos gratuitos e pagos de diversas companhias teatrais, de forma simples e transparente</p>
       <h3 class="title-about-us">Visão</h3>
       <p class="alert-message">Aumentar o número de pessoas que frequentam teatro</p>
       <h3 class="title-about-us">Valores</h3>

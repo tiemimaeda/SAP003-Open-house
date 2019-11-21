@@ -81,7 +81,7 @@ label[for="btn-menu"] {
 /*card dos destaques*/
 div.destaque {
   width: 95vw;
-  height: 300px;
+  height: 310px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,6 +93,7 @@ div.destaque {
   width: 90%;
   height: 80%;
   background-color: #bf8164;
+  
 }
 
 .card-destaque {
@@ -101,10 +102,12 @@ div.destaque {
   width: 30%;
   border-radius: 10px;
   border: 4px solid #f2b821;
-  margin-top: 12px;
-  margin-left: 4px;
+  margin-top: 14px;
+  margin-left: 20px;
   padding: 1px;
   font-weight: bold;
+  background-color: wheat;
+  
 }
 
 
@@ -112,7 +115,7 @@ div.destaque {
 /* todas as peças filtros*/
 .text-simple {
   text-align: center;
-  padding: 2%;
+  padding: 1%;
   background-color: #333333;
   color: #ffffff;
 }
@@ -182,13 +185,16 @@ div.destaque {
 
 .listcard {
   display: flex;
-  flex-direction: row;
-  width: 95%;
-  min-height: 120px;
+  /* flex-direction: row; */
+  width: 80%;
+  /* min-height: 120px; */
   border-radius: 10px;
   background-color: #fff;
   margin-top: 15px;
+  padding: 45px;
+  
 }
+
 
 .card-image {
   justify-content: row;
@@ -210,10 +216,9 @@ div.destaque {
   background-color: #E85531;
 }
 
-.card-name {
+.listcard {
   display: flex;
   flex-direction: row;
-
 }
 
 
@@ -300,11 +305,11 @@ justify-content: center;
   justify-content: space-between;
 }
 
-.card-name {
+.listcard {
   min-height: 35px;
   max-height: 35px;
   font-weight: bolder;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .card-theatre{
@@ -423,14 +428,14 @@ justify-content: center;
   color: #000000;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
 .header{
-  height:2%;
+  height:10%;
 }
 
-.menu-desktop{
+/* .menu-desktop{
   display: none;
-}
+} */
 
 .menu{
   display: flex;
@@ -462,7 +467,7 @@ text-decoration-line: underline;
 }
 
 .logo{
-  width: 25%;
+  /* width: 25%; */
   max-height: 70px;
 }
 
@@ -475,6 +480,15 @@ div.destaque{
 .caroussel{
   width: 97%;
   height: 70%;
+}
+
+.card-destaque{
+  width: 28%;
+  height: 90%;
+  font-size: 11px;
+  margin-top: 2%;
+  margin-left: 6px;
+  image-rendering: auto;
 }
 
 .search{
@@ -500,7 +514,8 @@ width: 40%;
 }
 
 .listcard{
-  margin-left: 20px;
+  margin-left: 3px;
+  width: 70%;
 }
 
 .card-image{
@@ -559,88 +574,5 @@ width: 40%;
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
-
-@media only screen and (min-width: 768px) {
-  .header {
-    height: 2%;
-  }
-
-  .logo {
-    width: 25%;
-    max-height: 70px;
-  }
-
-  div.destaque {
-    max-width: 80%;
-    margin: 20px 100px 20px 100px;
-    height: 350px;
-  }
-
-  .caroussel {
-    width: 90%;
-    height: 70%;
-  }
-
-  .all-plays {
-    max-width: 80%;
-    width: 90%;
-    margin: 20px 100px 20px 100px;
-  }
-
-  .listcard {
-    margin-left: 20px;
-  }
-
-  .card-image {
-    max-width: 250px;
-    height: 300px;
-
-  }
-
-
-
-  /* sobre */
-  .aboutUs {
-    background-image: url(./Imagens/theater_2.jpg);
-  }
-
-  .about-us-container {
-    width: 50%;
-  }
-
-  .about-us-info {
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* indique uma peça */
-  .forms {
-    margin: 20px 100px 20px 100px;
-  }
-
-  .text-description-indicate {
-    margin-left: 250px;
-  }
-
-  .input-indicate {
-    width: 50%;
-    margin-bottom: 20px;
-  }
-
-  .send-message {
-    margin-left: 250px;
-  }
-
-  .handshake-icon {
-    width: 15%;
-    margin-top: 10px;
-  }
-
-  .text-contact {
-    margin-left: 900px;
-  }
 }
 }

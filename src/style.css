@@ -150,7 +150,7 @@ section.destaque {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 300px;
+  max-height: 600px;
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -184,6 +184,10 @@ section.destaque {
   border-radius: 10px 10px 0 0;
   background-color: #E85531;
 }
+
+.card-name {
+  margin-top: 25px;
+
 .buy{
   display: flex;
   align-items: baseline;
@@ -397,6 +401,100 @@ justify-content: center;
   color: #000000;
 }
 
+@media only screen and (min-width: 768px) {
+.header{
+  height:2%;
+}
+
+.menu-desktop{
+  display: none;
+}
+
+.menu{
+  display: flex;
+  top: 15px;
+  right: 5%;
+  position: absolute;
+  width: auto;
+}
+
+.menu ul {
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+
+}
+
+.menu ul li {
+  width: auto;
+  height: 50px;
+  cursor: pointer;
+}
+
+.menu ul li:hover{
+text-decoration-line: underline;
+}
+
+.return{
+  display: none;
+}
+.logo{
+  width: 25%;
+  max-height: 70px;
+}
+
+div.destaque{
+  margin: 20px 0px 10px 10px;
+  max-width: 100vw;
+  height: 350px;
+}
+
+.caroussel{
+  width: 97%;
+  height: 70%;
+}
+
+.search{
+  width: 95vw;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.all-plays{
+  max-width: 100vw;
+  margin: 20px 0px 10px 10px;
+  
+}
+.select-filters{
+  margin-left: 30%;
+  width: 40%;
+}
+
+.all{
+  max-height: 500px;
+  margin-bottom: 10px;
+}
+.listcard{
+  margin-left: 20px;
+}
+
+/* sobre */
+.aboutUs{
+  background-image: url(./Imagens/theater_2.jpg) ;
+}
+
+.about-us-container{
+  width: 50%;
+}
+
+.about-us-info{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+
 .modal {
   display: none; 
   position: fixed;
@@ -445,44 +543,20 @@ justify-content: center;
   text-decoration: none;
   cursor: pointer;
 }
-
-
-@media only screen and (min-width: 768px) {
-  .header {
-    height: 2%;
-  }
   .btn-buy {
     padding: 1%;
     margin: 0px 15px 30px 0px;
   }
 
+
   #btn-menu:checked ~ .menu {
     margin-left: 78%;
 }
-  .logo {
-    width: 25%;
-    max-height: 70px;
-  }
-
   section.destaque {
     align-self: center;
     margin: 20px 100px;
     padding: 1%;
     box-sizing: border-box;
-  }
-
-  .caroussel {
-    width: 90%;
-    height: 70%;
-  }
-
-  .all-plays {
-    align-self: center;
-    margin: 20px 100px 20px 100px;
-  }
-  .image-partner {
-    height: 10%;
-    width: 12%;
   }
   .card-name {
     font-size: 20px;
@@ -503,22 +577,10 @@ justify-content: center;
   
   .card-destaque {
     height: auto;
-    
   }
   /* sobre */
   .aboutUs {
     background-image: url(./Imagens/theater_2.jpg);
-  }
-
-  .about-us-container {
-    width: 50%;
-  }
-
-  .about-us-info {
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
 
   /* indique uma peça */

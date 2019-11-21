@@ -27,6 +27,22 @@ function ListCard(props) {
 
 function Buy(e) {
     const option = e.target.dataset.id;
+    fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
+    .then(response => response.json())
+    .then((data) => {
+      return data.filter(play => play.ticket_url === option)
+    })
+    .then((play) => {
+        const analytic = {
+            theater: play[0].theater_name,
+            play_name: play[0].name,
+            date: new Date()
+        }
+        fetch(`https://open-house-309f5.firebaseio.com/analytics.json`, {
+            method: 'POST',
+            body: JSON.stringify(analytic)
+        });
+    });
     window.open(`${option}`,'_blank')
 }
 

@@ -90,6 +90,7 @@ section.destaque {
   display: flex;
   height: 80%;
   justify-content: space-around;
+  background-color: #bf8164;
 }
 
 .card-destaque {
@@ -101,10 +102,11 @@ section.destaque {
   border: 4px solid #f2b821;
   margin: 10px 0;
   font-weight: bold;
-  background-color: #bf8164;
+  background-color: wheat;
   padding: 0 1% 1%;
   font-size: 80%;
   height: auto;
+
 }
 
 
@@ -184,7 +186,10 @@ section.destaque {
   border-radius: 10px;
   background-color: #fff;
   margin-top: 15px;
+  padding: 45px;
+  
 }
+
 
 .card-image {
   align-self: center;
@@ -212,6 +217,11 @@ section.destaque {
 .buy{
   display: flex;
   align-items: baseline;
+
+.listcard {
+  display: flex;
+  flex-direction: row;
+
 }
 
 
@@ -302,6 +312,7 @@ justify-content: center;
   justify-content: space-between;
 }
 
+
 .card-name {
   min-height: 60px;
   font-weight: bolder;
@@ -310,6 +321,7 @@ justify-content: center;
   justify-content: center;
   align-items: center;
   text-align: center;
+
 }
 .listcard-name {
   font-weight: bolder;
@@ -429,7 +441,119 @@ justify-content: center;
   color: #000000;
 }
 
-.modal {
+@media only screen and (max-width: 768px) {
+.header{
+  height:10%;
+}
+
+/* .menu-desktop{
+  display: none;
+} */
+
+.menu{
+  display: flex;
+  top: 15px;
+  right: 5%;
+  position: absolute;
+  width: auto;
+}
+
+.menu ul {
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+
+}
+
+.menu ul li {
+  width: auto;
+  height: 50px;
+  cursor: pointer;
+}
+
+.menu ul li:hover{
+text-decoration-line: underline;
+}
+
+.return{
+  display: none;
+}
+
+.logo{
+  /* width: 25%; */
+  max-height: 70px;
+}
+
+div.destaque{
+  margin: 20px 0px 10px 10px;
+  max-width: 100vw;
+  height: 350px;
+}
+
+.caroussel{
+  width: 97%;
+  height: 70%;
+}
+
+.card-destaque{
+  width: 28%;
+  height: 90%;
+  font-size: 11px;
+  margin-top: 2%;
+  margin-left: 6px;
+  image-rendering: auto;
+}
+
+.search{
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.all-plays{
+  max-width: 100vw;
+  margin: 20px 0px 10px 10px; 
+}
+
+.select-filters{
+  margin-left: 30%;
+width: 40%;
+}
+
+.all{
+  max-height: 500px;
+  margin-bottom: 10px;
+}
+
+.listcard{
+  margin-left: 3px;
+  width: 70%;
+}
+
+.card-image{
+  max-width: 250px;
+  height: 300px;
+
+}
+
+/* sobre */
+.aboutUs{
+  background-image: url(./Imagens/theater_2.jpg) ;
+}
+
+.about-us-container{
+  width: 50%;
+}
+
+.about-us-info{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal{
   display: none; 
   position: fixed;
   z-index: 1; 

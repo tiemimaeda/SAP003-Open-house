@@ -31,8 +31,8 @@ const getTheater = () => {
 function Home() {
   const template = `
   <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
-  <input type="checkbox" id="btn-menu" />
-  <label for="btn-menu" class="hamburguer-menu">&#9776;</label>
+  <input type="checkbox" id="btn-menu" class='menu-desktop' />
+  <label for="btn-menu" class="hamburguer-menu menu-desktop"">&#9776;</label>
   <nav class="menu">
     <ul>
     ${Menu({

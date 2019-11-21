@@ -7,15 +7,14 @@ import ListCard from '../components/listcard.js';
 
 const getTheaterApi = () => {
   fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
-  .then(response => response.json())
-  .then((data) => {
-    data.map((api) =>  {
-      const allData = api;
-      cards(allData);
-      return allData;
-  })
-  getTheater();
- })
+    .then(response => response.json())
+    .then((data) => {
+      data.map((api) => {
+        cards(api);
+        return api;
+      })
+      getTheater();
+    })
 }
 
 const getTheater = () => {
@@ -31,97 +30,96 @@ const getTheater = () => {
 
 function Home() {
   const template = `
-  <div class="template">
   <header class="header"><img class="logo" src="./Imagens/logo.png"></header>
   <input type="checkbox" id="btn-menu" class='menu-desktop' />
   <label for="btn-menu" class="hamburguer-menu menu-desktop"">&#9776;</label>
   <nav class="menu">
-  <ul>
-  ${Menu({
-    name: 'Sobre',
-    link: About,
-  })}
-  ${Menu({
-    name: 'Indique uma peça',
-    link: Indicate,
-  })}
-  ${Menu({
-    name: 'Contato',
-    link: Contact,
-  })}
-  </ul> 
+    <ul>
+    ${Menu({
+      name: 'Sobre',
+      link: About,
+    })}
+    ${Menu({
+      name: 'Indique uma peça',
+      link: Indicate,
+    })}
+    ${Menu({
+      name: 'Contato',
+      link: Contact,
+    })}
+    </ul> 
   </nav>
   <div class = 'main'>
-  <section>
-    <div class='destaque'>
-      <h3 class="text-simple"> ⭐ Peças em destaque ⭐</h3>
-      <div class='caroussel'></div>
-    </div>
-  </section>
-  <div class='all-plays'>
-  <section>
-    <h3 class="text-simple">Todas as peças</h3>
-      <div class="search">
-      <div class = 'search-by-name'>
-        ${Input({
-        class: 'input search-input',
-        placeholder: 'Pesquise pelo nome',
-        type: 'text',
-        })}
-        ${Button({
-          id: 'search',
-          class:'btn-search',
-          title: '<i class="fas fa-search"></i>', 
-          onClick: Search,
-        })}
-      </div>
-      <p class='or'> -ou- </p>
-      <div class='select-filters'>
-      <select class ="filter-location" id='location' onchange = "window.home.filterLocation()">
-      <option value='1'>localização</option>
-      <option value='zona sul'>zona sul</option>
-      <option value='zona norte'>zona norte</option>
-      <option value='zona oeste'>zona oeste</option>
-      <option value='zona leste'>zona leste</option>
-      <option value='centro'>centro</option>
-      </select>
-      <form class='filter-date' onchange="window.home.filterDate()">
-      ${Input({
-        class: 'date-input',
-        placeholder: '',
-        type: 'date',
-        })}
-      </form>
-     <select id="price" class='filter-value' onchange="window.home.filterPrice()">
-      <option value='Vai dar certo'>valor</option>
-      <option value='gratuito'>Gratuito</option>
-      <option value='R$50,00'>Até R$50,00</option>
-      <option value='R$100,00'>Até R$100,00</option>
-      <option value='R$100,01'>Acima de R$100,00</option>
-      </select>
-      </div>
-      <div class="all list-plays"></div>
+    <section class='destaque'>
+        <h3 class="text-simple"> ⭐ Peças em destaque ⭐</h3>
+        <article class='caroussel'></article>
+    </section>
+    <section class='all-plays'>
+      <h3 class="text-simple">Todas as peças</h3>
+        <form class = 'search-by-name'>
+          ${Input({
+          class: 'input search-input',
+          placeholder: 'Pesquise pelo nome',
+          type: 'text',
+          })}
+          ${Button({
+            id: 'search',
+            class:'btn-search',
+            title: '<i class="fas fa-search"></i>', 
+            onClick: Search,
+          })}
+        </form>   
+        <p class='or'> -ou- </p>
+        <div class='select-filters'>
+          <select class ="filter-location" id='location' onchange = "window.home.filterLocation()">
+            <option value='1'>localização</option>
+            <option value='zona sul'>zona sul</option>
+            <option value='zona norte'>zona norte</option>
+            <option value='zona oeste'>zona oeste</option>
+            <option value='zona leste'>zona leste</option>
+            <option value='centro'>centro</option>
+          </select>
+          <form class='filter-date' onchange="window.home.filterDate()">
+          ${Input({
+            class: 'date-input',
+            placeholder: '',
+            type: 'date',
+            })}
+          </form>
+          <select id="price" class='filter-value' onchange="window.home.filterPrice()">
+            <option value='Vai dar certo'>valor</option>
+            <option value='gratuito'>Gratuito</option>
+            <option value='R$50,00'>Até R$50,00</option>
+            <option value='R$100,00'>Até R$100,00</option>
+            <option value='R$100,01'>Acima de R$100,00</option>
+            </select>
+        </div>
+      <article class="all list-plays"></article>
     </section>
   </div>
-  </div>
   <section class='partners'>
-  <p class='partners-title'>Parceiros:</p>
-  <div class='partners-container'>
- <img class='image-partner' src='https://www.macunaima.com.br/wp-content/themes/macunaima/images/logo-2015.png'>
- <img class='image-partner' src='https://upload.wikimedia.org/wikipedia/en/e/e7/Teatro_Bradesco.png'> 
- <img class='image-partner' src='http://teatroprocopioferreira.com.br/wp-content/uploads/2017/06/logo-teatro-procopio-1.png'>
- <img class='image-partner' src='https://m.sescsp.org.br/Content/img/logo.png'>
- <img class='image-partner' src='https://logodownload.org/wp-content/uploads/2018/10/sympla-logo-13.png'>
- </div>
- </section>
-  </div>
-
+    <p class='partners-title'>Parceiros:</p>
+    <article class='partners-container'>
+    <img class='image-partner' src='https://www.macunaima.com.br/wp-content/themes/macunaima/images/logo-2015.png'>
+    <img class='image-partner' src='https://www.teatrobradesco.com.br/img/logoTeatroBradescoRodape.png'> 
+    <img class='image-partner' src='http://teatroprocopioferreira.com.br/wp-content/uploads/2017/06/logo-teatro-procopio-1.png'>
+    <img class='image-partner' src='https://m.sescsp.org.br/Content/img/logo.png'>
+    <img class='image-partner' src='https://logodownload.org/wp-content/uploads/2018/10/sympla-logo-13.png'>
+    <img class='image-partner' src='https://logodownload.org/wp-content/uploads/2017/11/tv-cultura-logo-6.png'>
+  </article>
+  </section>
   <div id="myModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p class="card-sinopse"></p>
+    <div class="modal-content">
+    <p class = "modal-name"></p>
+      ${Button({
+        id: 'close',
+        class:'btn-close',
+        title: '&times', 
+        onClick: closeModal,
+      })}
+      <p class="card-sinopse"></p>
+    </div>
   </div>
-</div>
   `;
   location.hash = 'home';
   return template;
@@ -131,6 +129,7 @@ function cardsHighlight(allData) {
   document.querySelector('.caroussel').innerHTML += `
   ${Card({
     class: 'card-destaque',
+    id: allData.ticket_url, 
     name: allData.name,
     img: allData.photo_url,
     price: allData.price,
@@ -152,7 +151,7 @@ function cards(allData) {
       theater: allData.theater_name,
       synopsis: allData.synopsis
     })}
-   `
+  `
 }
 
 function filterPrice() {
@@ -241,21 +240,25 @@ function Contact() {
   window.location.hash = 'contact'
 };
 
-function showModal(s) {
+function showModal(sinopse) {
   let modal = document.querySelector('#myModal');
-  document.querySelector('.card-sinopse').innerHTML = s;
+  document.querySelector('.card-sinopse').innerHTML = sinopse;
   if (modal) {
       modal.style.display = 'block';
   }
-  
 }
+
+function closeModal() {
+  document.querySelector('#myModal').style.display = 'none';
+}
+
 
 window.home = {
   cards, 
   filterPrice,
   filterLocation,
   filterDate,
-  showModal
+  showModal,
 }
 
 export {Home, getTheaterApi} ;

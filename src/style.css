@@ -7,7 +7,6 @@
 .main {
   background-color: #adadad;
   display: flex;
-  justify-content: center;
   flex-direction: column;
 }
 
@@ -77,11 +76,9 @@ label[for="btn-menu"] {
   height: 100%;
 }
 
-
 /*card dos destaques*/
-div.destaque {
+section.destaque {
   width: 95vw;
-  height: 310px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,46 +87,45 @@ div.destaque {
 }
 
 .caroussel {
-  width: 90%;
+  display: flex;
   height: 80%;
+  justify-content: space-around;
   background-color: #bf8164;
-  
 }
 
 .card-destaque {
+  box-sizing: border-box;
   display: inline-flex;
   flex-direction: column;
   width: 30%;
   border-radius: 10px;
   border: 4px solid #f2b821;
-  margin-top: 14px;
-  margin-left: 20px;
-  padding: 1px;
+  margin: 10px 0;
   font-weight: bold;
   background-color: wheat;
-  
-}
+  padding: 0 1% 1%;
+  font-size: 80%;
+  height: auto;
 
+}
 
 
 /* todas as peças filtros*/
 .text-simple {
+  font-size: 150%;
   text-align: center;
   padding: 1%;
   background-color: #333333;
   color: #ffffff;
 }
 
-.search {
-  background-color: #333333;
-}
 
 .all-plays {
   width: 95vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 5px;
+  margin: auto;
+  background-color: #333333;
 }
 
 .search-by-name {
@@ -180,14 +176,13 @@ div.destaque {
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .listcard {
   display: flex;
-  /* flex-direction: row; */
-  width: 80%;
-  /* min-height: 120px; */
+  flex-direction: row;
+  width: 95%;
   border-radius: 10px;
   background-color: #fff;
   margin-top: 15px;
@@ -197,16 +192,19 @@ div.destaque {
 
 
 .card-image {
-  justify-content: row;
   align-self: center;
   max-height: 110px;
-  width: 40%;
+  width: 100%;
   height: 100px;
-  margin-right: 10px;
+  margin: 5% 0;
 }
 
-.card-image img {
-  width: 100%;
+.listcard-img {
+  align-self: center;
+  width: 100px;
+  height: 80px;
+  margin: 0;
+  padding: 0 1%;
 }
 
 .card-time {
@@ -216,9 +214,14 @@ div.destaque {
   background-color: #E85531;
 }
 
+.buy{
+  display: flex;
+  align-items: baseline;
+
 .listcard {
   display: flex;
   flex-direction: row;
+
 }
 
 
@@ -228,8 +231,8 @@ div.destaque {
 .btn-buy {
   background-color:green;
   color: #fff;
+  padding: 3%;
   margin:0px 10px 5px 0px;
-  height: 20px;
 }
 
 
@@ -243,7 +246,9 @@ div.destaque {
 
 .partners-container{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .partners-title{
@@ -253,8 +258,9 @@ div.destaque {
   text-decoration:underline;
 }
 .image-partner{
-  width: 130px;
- margin-bottom: 40px; 
+  height: 15%;
+  width: 20%;
+  margin: 0 2% 3%;
 }
 
 
@@ -264,6 +270,8 @@ div.destaque {
   flex-direction: column;
   align-items: center;
   padding: 3% 0;
+  margin: 0 10%;
+  background-color: #333333;
 }
 
 /* input pág de indicação */
@@ -290,7 +298,6 @@ div.destaque {
 display: flex;
 flex-direction: column;
 width: 100%;
- max-height: 80px;
 justify-content: center;
 }
 
@@ -305,19 +312,28 @@ justify-content: center;
   justify-content: space-between;
 }
 
-.listcard {
-  min-height: 35px;
-  max-height: 35px;
+
+.card-name {
+  min-height: 60px;
   font-weight: bolder;
-  font-size: 13px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
 }
+.listcard-name {
+  font-weight: bolder;
+  text-align: center;
+}
+
 
 .card-theatre{
   font-size: 12px;
 }
 
 .card-classification{
-  width: 25px;
   margin: 2px 0px 2px 0px;
 }
 
@@ -325,8 +341,8 @@ justify-content: center;
 
 .aboutUs {
   background-image: url(./Imagens/theater.jpg);
-  width: 100vw;
-  height: 90vh;
+  background-size: cover;
+  height: 100vh;
   display: flex;
   justify-content: center;
   color: #ffffff;
@@ -342,6 +358,8 @@ justify-content: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2%;
+  margin: 5%;
 }
 
 .about-us-info {
@@ -349,7 +367,8 @@ justify-content: center;
 }
 
 .name-network {
-  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .title-about-us {
@@ -369,20 +388,14 @@ justify-content: center;
 }
 
 .text-description-indicate {
-  align-self: center;
-  width: 70%;
-
+  display: flex;
+  flex-flow: column;
+  padding: 0 10%;
+  text-align: center;
 }
 
 .send-message {
-  margin-left: 60px;
-  margin-bottom: 30px;
-}
-
-.forms {
-  margin-left: 35px;
-  width: 80%;
-  background-color: #333333;
+  margin: 5% 0;
 }
 
 .title-indicate {
@@ -395,8 +408,9 @@ justify-content: center;
 }
 
 .button-send-green {
-  width: 60px;
+  padding: 3%;
   background-color: rgb(93, 199, 98);
+  border-radius: 10px;
 }
 
 /* contato */
@@ -411,10 +425,9 @@ justify-content: center;
 }
 
 .alert-message {
-  width: 100%;
-  align-self: center;
+  padding: 5%;
+  text-align: center;
 }
-
 .handshake-icon {
   margin-top: 100px;
   align-self: center;
@@ -575,4 +588,101 @@ width: 40%;
   text-decoration: none;
   cursor: pointer;
 }
+
+
+@media only screen and (min-width: 768px) {
+  .header {
+    height: 2%;
+  }
+  .btn-buy {
+    padding: 1%;
+    margin: 0px 15px 30px 0px;
+  }
+
+  .logo {
+    width: 25%;
+    max-height: 70px;
+  }
+
+  section.destaque {
+    align-self: center;
+    margin: 20px 100px;
+    padding: 1%;
+    box-sizing: border-box;
+  }
+
+  .caroussel {
+    width: 90%;
+    height: 70%;
+  }
+
+  .all-plays {
+    align-self: center;
+    margin: 20px 100px 20px 100px;
+  }
+
+  .card-name {
+    font-size: 20px;
+    min-height: 50px;
+    padding: 5% 0 0 0;
+  }
+  .card-image {
+    max-width: 250px;
+    height: 300px;
+    padding: 1% 0;
+  }
+  .listcard-img {
+    align-self: center;
+    max-height: 110px;
+    max-width: 160px;
+    height: 100px;
+  }
+  
+  .card-destaque {
+    height: auto;
+    
+  }
+  /* sobre */
+  .aboutUs {
+    background-image: url(./Imagens/theater_2.jpg);
+  }
+
+  .about-us-container {
+    width: 50%;
+  }
+
+  .about-us-info {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* indique uma peça */
+  .forms {
+    margin: 20px 100px 20px 100px;
+  }
+
+  .text-description-indicate {
+    margin-left: 250px;
+  }
+
+  .input-indicate {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .send-message {
+    margin-left: 250px;
+  }
+
+  .handshake-icon {
+    width: 15%;
+    margin-top: 10px;
+  }
+
+  .text-contact {
+    margin-left: 900px;
+  }
+
 }

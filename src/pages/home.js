@@ -251,9 +251,9 @@ function Contact() {
   window.location.hash = 'contact'
 };
 
-function showModal(sinopse) {
+function showModal(sinopse, title) {
   const modal = document.querySelector('#myModal');
-  document.querySelector('.card-sinopse').innerHTML = sinopse;
+  document.querySelector('.card-sinopse').innerHTML = sinopse, title;
   if (modal) {
       modal.style.display = 'flex';
   }

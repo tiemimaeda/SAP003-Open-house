@@ -517,10 +517,9 @@ div.destaque{
 }
 
 .btn-close {
-  padding: 1%;
-  width: 10%;
+  width: 5%;
   align-self: flex-end;
-  color: red;
+  color: black;
 }
 .card-sinopse {
   text-align: justify;

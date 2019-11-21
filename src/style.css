@@ -173,7 +173,7 @@ div.destaque {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 300px;
+  max-height: 600px;
   height: auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -211,6 +211,7 @@ div.destaque {
 }
 
 .card-name {
+  margin-top: 25px;
   display: flex;
   flex-direction: row;
 
@@ -478,6 +479,7 @@ div.destaque{
 
 .search{
   width: 95vw;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -489,7 +491,7 @@ div.destaque{
 }
 .select-filters{
   margin-left: 30%;
-width: 40%;
+  width: 40%;
 }
 
 .all{
@@ -503,11 +505,11 @@ width: 40%;
 .card-image{
   max-width: 250px;
   height: 300px;
-
+  
 }
 
 
- 
+
 /* sobre */
 .aboutUs{
   background-image: url(./Imagens/theater_2.jpg) ;

@@ -71,6 +71,7 @@ label[for="btn-menu"] {
 /*card dos destaques*/
 section.destaque {
   width: 95vw;
+  height: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,28 +79,31 @@ section.destaque {
   background-color: #333333;
 }
 .caroussel {
+  width: 95%;
+  max-height: 220px;
   display: flex;
-  height: 80%;
+  margin-bottom: 10px;
   justify-content: space-around;
+  background-color: #bf8164;
+
 }
 .card-destaque {
   box-sizing: border-box;
+  background-color: rgb(248, 242, 242);
   display: inline-flex;
   flex-direction: column;
-  width: 30%;
-  border-radius: 10px;
-  border: 4px solid #f2b821;
+  width: 32%;
   margin: 10px 0;
   font-weight: bold;
-  background-color: #bf8164;
   padding: 0 1% 1%;
   font-size: 80%;
   height: auto;
+  text-align: center;
 }
 
 /* todas as peças filtros*/
 .text-simple {
-  font-size: 150%;
+  font-size: 100%;
   text-align: center;
   padding: 1%;
   background-color: #333333;
@@ -109,7 +113,7 @@ section.destaque {
   width: 95vw;
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 10px;
   background-color: #333333;
 }
 .search-by-name {
@@ -166,9 +170,9 @@ section.destaque {
 }
 .card-image {
   align-self: center;
-  max-height: 110px;
+  max-height: 130px;
   width: 100%;
-  height: 100px;
+  height: 130px;
   margin: 5% 0;
 }
 .listcard-img {
@@ -185,13 +189,6 @@ section.destaque {
   background-color: #E85531;
 }
 
-.card-name {
-  margin-top: 25px;
-
-.buy{
-  display: flex;
-  align-items: baseline;
-}
 
 .location-icon{
   color: #757474;
@@ -199,7 +196,7 @@ section.destaque {
 .btn-buy {
   background-color:green;
   color: #fff;
-  padding: 3%;
+  padding: 5px 10px;
   margin:0px 10px 5px 0px;
 }
 .partners{
@@ -285,7 +282,6 @@ justify-content: center;
 }
 .listcard-name {
   font-weight: bolder;
-  text-align: center;
 }
 
 
@@ -294,7 +290,7 @@ justify-content: center;
 }
 
 .card-classification{
-  margin: 2px 0px 2px 0px;
+  width: 30px;
 }
 
 /* about us */
@@ -368,7 +364,7 @@ justify-content: center;
 }
 
 .button-send-green {
-  padding: 3%;
+  width: 70px;
   background-color: rgb(93, 199, 98);
   border-radius: 10px;
 }
@@ -530,51 +526,71 @@ div.destaque{
   text-align: justify;
 }
 
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.menu{
+  display: flex;
+  top: 15px;
+  right: 5%;
+  position: absolute;
+  width: auto;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
+.menu ul {
+  display:flex;
+  flex-direction: row;
+  list-style: none;
+
+}
+
+.menu ul li {
+  width: auto;
+  height: 50px;
   cursor: pointer;
 }
+
+.menu ul li:hover{
+text-decoration-line: underline;
+}
   .btn-buy {
-    padding: 1%;
+    padding: 0;
     margin: 0px 15px 30px 0px;
   }
-
-
-  #btn-menu:checked ~ .menu {
-    margin-left: 78%;
-}
-  section.destaque {
-    align-self: center;
-    margin: 20px 100px;
-    padding: 1%;
-    box-sizing: border-box;
+  
+  .search{
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+  
+  .logo {
+    width: 25%;
+    max-height: 70px;
+  }
+
   .card-name {
     font-size: 20px;
-    min-height: 50px;
-    padding: 5% 0 0 0;
+    min-height: 20px;
+
   }
   .card-image {
-    max-width: 250px;
-    height: 300px;
+    max-width: 300px;
+    height: 350px;
+    max-height: 170px;
     padding: 1% 0;
   }
   .listcard-img {
-    align-self: center;
-    max-height: 110px;
-    max-width: 160px;
-    height: 100px;
+    width: 25%;
+    height: 120px;
   }
-  
+
+  section.destaque{
+    height: 350px;
+  }
+
+  .caroussel{
+    height:300px;
+    max-height: 300px;
+  }
   .card-destaque {
     height: auto;
   }
@@ -585,11 +601,13 @@ div.destaque{
 
   /* indique uma peça */
   .forms {
-    margin: 20px 100px 20px 100px;
+    max-width: 500px;
+    width: 500px;
+   align-self: center;
   }
 
-  .text-description-indicate {
-    margin-left: 250px;
+  .text-description-indicate { 
+    height: 150px;
   }
 
   .input-indicate {
@@ -598,7 +616,7 @@ div.destaque{
   }
 
   .send-message {
-    margin-left: 250px;
+    text-align: center;
   }
 
   .handshake-icon {
@@ -606,8 +624,50 @@ div.destaque{
     margin-top: 10px;
   }
 
-  .text-contact {
-    margin-left: 900px;
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .partners-container{
+    display: flex;
+    width:100vw;
+    margin-top: 40px;
+    justify-content: center;
+  }
+  .image-partner{
+    width: 100px;
   }
 
 }

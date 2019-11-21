@@ -21,7 +21,7 @@ const getTheater = () => {
   fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
   .then(response => response.json())
   .then((data) => {
-    const arr = [5,4,9];
+    const arr = [4,1,15];
     for (let i=0; arr.length>= i; i++) {
       cardsHighlight(data[arr[i]])
     }
@@ -51,7 +51,7 @@ function Home() {
   </nav>
   <div class = 'main'>
     <section class='destaque'>
-        <h3 class="text-simple"> ⭐ Peças em destaque ⭐</h3>
+        <h3 class="text-simple"> ⭐ Peças em destaque ⭐ </h3>
         <article class='caroussel'></article>
     </section>
     <section class='all-plays'>
@@ -88,7 +88,7 @@ function Home() {
           </form>
           <select id="price" class='filter-value' onchange="window.home.filterPrice()">
             <option value='Vai dar certo'>valor</option>
-            <option value='gratuito'>Gratuito</option>
+            <option value='Gratuito'>Gratuito</option>
             <option value='R$50,00'>Até R$50,00</option>
             <option value='R$100,00'>Até R$100,00</option>
             <option value='R$100,01'>Acima de R$100,00</option>
@@ -140,15 +140,14 @@ function sendClicksAnalitycs(){
     )})
 }
 
+
 function cardsHighlight(allData) {
   document.querySelector('.caroussel').innerHTML += `
   ${Card({
     class: 'card-destaque', 
-    name: allData.name,
+    id: allData.ticket_url, 
     img: allData.photo_url,
-    price: allData.price,
-    classification: allData.parental_raiting,
-    date: allData.date,
+    name: allData.name,
   })}
   `
 }
@@ -198,9 +197,7 @@ function filterLocation() {
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
     .then(response => response.json())
     .then(data => {
-      data.map((locations) => {
-        console.log(locations.theater_zone);
-        
+      data.map((locations) => {        
         if (options == locations.theater_zone) {
           window.home.cards(locations)
         } 

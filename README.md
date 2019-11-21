@@ -1,17 +1,14 @@
 # Uni Teatro
 
 ## Índice
-- [Plataforma UniTeatro](#Plataforma-UniTeatro)
-  - [Índice](#Índice)
+
   - [1. Resumo do Projeto.](#1-resumo-do-projeto)
   - [2. Características-Técnicas.](#2-características-técnicas)
   - [3. Histórias de Usuários.](#3-histórias-de-usuário)
   - [4. Personas.](#4-Personas)
-  - [5. Fluxograma](#5-Fluxograma)
-  - [6. Protótipos](#6-Protótipos)
-  - [7. Testes com Usuários](#7-Testes-com-Usuários)
-  - [8. Interface](#8-Interface)
-  - [9. Logo e Paleta de Cores](#9-Logo-e-Paleta-de-Cores)
+  - [5. Protótipos](#6-Protótipos)
+  - [6. Testes com Usuários](#7-Testes-com-Usuários)
+  - [7. Próximas Versões](#9-Próximas-Versões)
 
 
 ## 1. Resumo do Projeto
@@ -23,8 +20,8 @@ O objetivo é aumentar o número de pessoas que frequentam teatro e incentivar a
 
 ## 2. Características Técnicas
 
-As **caraterísticas técnicas** da aplicação envolveram:
-- Uma *Single-Page Application*;
+As *caraterísticas técnicas* da aplicação envolveram:
+- Uma Single-Page Application;
 - CSS: Desenho com enfoque no mobile first;
 - Permite a filtrar por data, valores, localização e pesquisa por nome;
 - Encaminha o usuário para a página de compra;
@@ -38,7 +35,7 @@ As **caraterísticas técnicas** da aplicação envolveram:
 
 ##### CSS3
 * Implementação de seletores de classe.
-* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a **mobile e desktop**,conforme modelo proposto.
+* Utilizamos `flexbox` para alcançar o desenho `mobile first`, implementando um layout que se adapte a *mobile e desktop*,conforme modelo proposto.
 * Não utilizamos frameworks de CSS (bootstrap), nem estilização com `float`.
 
 ##### JavaScript (ES6+)
@@ -83,7 +80,7 @@ As **caraterísticas técnicas** da aplicação envolveram:
 
 ## 4. Personas
 
-### **Persona 1**
+### *Persona 1*
 Nome: Priscila Cola
 Idade: 28 anos
 Profissão: Técnica de Enfermagem
@@ -97,7 +94,7 @@ Frustrações: Não tem tempo, salário baixo e falta de disposição.
 Necessidades: Distração de baixo valor, entretenimento próximo a sua casa.
 
 
-### **Persona 2**
+### *Persona 2*
 Nome: Cristiano Ferreira
 Idade: 38
 Profissão:Micro empreendedor
@@ -111,7 +108,7 @@ Frustrações: No dia de folga ele não encontra nada para fazer com os filhos.
 Necessidades: Encontrar uma programação para fazer com os filhos nas terças.
 
 
-### **Persona 3**
+### *Persona 3*
 Nome: Caio Almeida
 Idade: 19
 Profissão: Estudante universitário do curso de Artes Cênicas
@@ -124,10 +121,8 @@ Cenário: Estuda e estagia, mora longe do centro e não tem tempo para praticar 
 Frustrações: Sua área de estudo é desvalorizada
 Necessidades: Ele precisa de horas complementares e acesso fácil ao teatro e peças baratas.
 
-## 5. FLUXOGRAMA
 
-
-## 6. Protótipos
+## 5. Protótipos
 
 Esses foram os mockups criados para os testes de usuários.
 
@@ -140,7 +135,7 @@ Esses foram os mockups criados para os testes de usuários.
 
 ![Protótipo página de Parceiros](img/prot1.png)
 
-## 7. Testes com Usuários
+## 6. Testes com Usuários
 
 Nos testes criados, percebemos algumas falhas.
  - Botão de voltar;
@@ -149,8 +144,11 @@ Nos testes criados, percebemos algumas falhas.
 
  Todos foram resolvidos para a entrega da plataforma
 
+## 7. Próximas Versões
 
-
-## 8. Interface
-
-Todas as telas são responsivas.
+- Implementação de filtro de acessibilidade;
+- Implementação da funcionalidade para encontrar teatros próximos ao usuário;
+- Agenda teatral;
+- Criação de login e senha;
+- Opção de favoritar peças;
+- Opção de inserir a peça que deseja direto no calendário pessoal.

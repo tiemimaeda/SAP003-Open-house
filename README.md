@@ -6,11 +6,9 @@
   - [2. Características-Técnicas.](#2-características-técnicas)
   - [3. Histórias de Usuários.](#3-histórias-de-usuário)
   - [4. Personas.](#4-Personas)
-  - [5. Fluxograma](#5-Fluxograma)
-  - [6. Protótipos](#6-Protótipos)
-  - [7. Testes com Usuários](#7-Testes-com-Usuários)
-  - [8. Interface](#8-Interface)
-  - [9. Próximas Versões](#9-Próximas-Versões)
+  - [5. Protótipos](#6-Protótipos)
+  - [6. Testes com Usuários](#7-Testes-com-Usuários)
+  - [7. Próximas Versões](#9-Próximas-Versões)
 
 
 ## 1. Resumo do Projeto
@@ -123,10 +121,8 @@ Cenário: Estuda e estagia, mora longe do centro e não tem tempo para praticar 
 Frustrações: Sua área de estudo é desvalorizada
 Necessidades: Ele precisa de horas complementares e acesso fácil ao teatro e peças baratas.
 
-## 5. Fluxo do Usuário
 
-
-## 6. Protótipos
+## 5. Protótipos
 
 Esses foram os mockups criados para os testes de usuários.
 
@@ -139,7 +135,7 @@ Esses foram os mockups criados para os testes de usuários.
 
 ![Protótipo página de Parceiros](img/prot1.png)
 
-## 7. Testes com Usuários
+## 6. Testes com Usuários
 
 Nos testes criados, percebemos algumas falhas.
  - Botão de voltar;
@@ -148,19 +144,7 @@ Nos testes criados, percebemos algumas falhas.
 
  Todos foram resolvidos para a entrega da plataforma
 
-
-## 8. Interface
-
-Telas de Página Inicial Web
-
-![Home Menu](img/home1.png)
-![Filtros e Pesquisa](img/home2.png)
-
-Tela Mobile
-
-![Tela Inicial Mobile](img/homemobile.png)
-
-## 9. Próximas Versões
+## 7. Próximas Versões
 
 - Implementação de filtro de acessibilidade;
 - Implementação da funcionalidade para encontrar teatros próximos ao usuário;

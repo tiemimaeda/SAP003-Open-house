@@ -128,8 +128,7 @@ function Home() {
 function cardsHighlight(allData) {
   document.querySelector('.caroussel').innerHTML += `
   ${Card({
-    class: 'card-destaque',
-    id: allData.ticket_url, 
+    class: 'card-destaque', 
     name: allData.name,
     img: allData.photo_url,
     price: allData.price,
@@ -241,10 +240,10 @@ function Contact() {
 };
 
 function showModal(sinopse) {
-  let modal = document.querySelector('#myModal');
+  const modal = document.querySelector('#myModal');
   document.querySelector('.card-sinopse').innerHTML = sinopse;
   if (modal) {
-      modal.style.display = 'block';
+      modal.style.display = 'flex';
   }
 }
 

@@ -4,8 +4,13 @@ import Menu from '../components/menu.js';
 
 function Indicate() {
   const template = `
-  <header class="header"><label for="btn-back" class="btn-voltar" 
-  onClick="window.location.hash = 'home';" ><i class="far fa-arrow-alt-circle-left"></i></label><img class="logo" src="./Imagens/logo.png"></header>
+  <header class="header">
+  <label for="btn-back" class="btn-voltar menu-desktop" 
+  onClick="window.location.hash = 'home';" >
+  <i class="far fa-arrow-alt-circle-left"></i>
+  </label>
+  <img class="logo" src="./Imagens/logo.png">
+  </header>
   <input type="checkbox" id="btn-menu" class='menu-desktop'/>
   <label for="btn-menu" class="hamburguer-menu menu-desktop"><i class="fas fa-bars"></i></label>
   <nav class="menu">
@@ -26,7 +31,7 @@ function Indicate() {
   </nav>  
     <section class = "register-section">
     <div class='text-description-indicate'>
-      <h3 class="text-indicate">Conhece ou participa de um expetáculo que ainda não está no site?</h3>
+      <h3 class="text-indicate">Conhece ou participa de um espetáculo que ainda não está no site?</h3>
       <h4 class="text-indicate send-message">Envie para nós!</h4>
     </div>
       <form class="forms">
@@ -37,7 +42,7 @@ function Indicate() {
         value:'',
         type: 'text',
         })}
-        <label class='title-indicate'> nome da companhia:</label> 
+        <label class='title-indicate'>Nome da companhia:</label> 
         ${Input({
         class: 'job-input input-indicate',
         placeholder: 'Teatro 1',

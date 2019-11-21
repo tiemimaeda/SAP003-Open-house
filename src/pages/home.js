@@ -255,7 +255,7 @@ function showModal(sinopse) {
   const modal = document.querySelector('#myModal');
   document.querySelector('.card-sinopse').innerHTML = sinopse;
   if (modal) {
-      modal.style.display = 'flex';
+      modal.style.display = 'block';
   }
 }
 

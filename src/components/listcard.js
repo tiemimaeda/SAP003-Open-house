@@ -2,7 +2,7 @@ import Button from '../components/button.js';
 
 function ListCard(props) {
     const template = `
-    <li data-id='${props.id}' class="${props.class}" onclick="window.home.showModal('${props.synopsis}')">
+    <li data-id='${props.id}' class="${props.class}" onclick="window.home.showModal('<strong>Sinopse: </strong>${props.synopsis}')">
     <img class = "listcard-img"  src="${props.img}">
     <div class="card-info">
     <p class = "listcard-name">${props.name}</p>

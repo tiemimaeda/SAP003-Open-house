@@ -72,7 +72,22 @@ function Indicate() {
 }
 
 function sendIndicate() {
-  console.log("oi")
+  const form = {}
+  form.name = document.querySelector('.name-input').value;
+  form.cia = document.querySelector('.job-input').value;
+  form.contact = document.querySelector('.email-input').value;
+  form.date = document.querySelector('.birth-date-input').value;
+  fetch('https://open-house-309f5.firebaseio.com/referrals.json',{
+    method: 'POST',
+    body: JSON.stringify(form)
+  })
+    .then(res => res.json())
+    .then(() => { Swal.fire(
+      'Formulário enviado',
+      'obrigada!',
+      'success'
+    )})
+
 }
 
 function About() {

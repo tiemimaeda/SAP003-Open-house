@@ -124,6 +124,21 @@ function Home() {
   location.hash = 'home';
   return template;
 }
+function sendClicksAnalitycs(){
+  const analitycs = {}
+  theater
+
+  fetch('https://open-house-309f5.firebaseio.com/analitycs.json',{
+    method: 'POST',
+    body: JSON.stringify(form)
+  })
+    .then(res => res.json())
+    .then(() => { Swal.fire(
+      'Formulário enviado',
+      'obrigada!',
+      'success'
+    )})
+}
 
 function cardsHighlight(allData) {
   document.querySelector('.caroussel').innerHTML += `

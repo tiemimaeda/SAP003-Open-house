@@ -4,7 +4,6 @@ import Menu from '../components/menu.js';
 
 function Indicate() {
   const template = `
-  <div class="template">
   <header class="header"><label for="btn-back" class="btn-voltar" 
   onClick="window.location.hash = 'home';" ><i class="far fa-arrow-alt-circle-left"></i></label><img class="logo" src="./Imagens/logo.png"></header>
   <input type="checkbox" id="btn-menu" />
@@ -68,7 +67,6 @@ function Indicate() {
       })}
     </form>
   </section>
-</div>
   `;
   return template;
 }

@@ -3,9 +3,9 @@ import Button from '../components/button.js';
 function ListCard(props) {
     const template = `
     <li data-id='${props.id}' class="${props.class}" onclick="window.home.showModal('${props.synopsis}')">
-    <img class = "card-image"  src="${props.img}">
+    <img class = "listcard-img"  src="${props.img}">
     <div class="card-info">
-    <p class = "card-name">${props.name}</p>
+    <p class = "listcard-name">${props.name}</p>
     <div class=info>
     <p class = "card-theatre"><i class="location-icon fas fa-map-marker-alt"></i>   ${props.theater}</p>
     <img class = "card-classification" src='../Imagens/parental-raiting-icons/${props.classification}.png'>
@@ -27,7 +27,6 @@ function ListCard(props) {
 
 function Buy(e) {
     const option = e.target.dataset.id;
-    // window.location.href = `${option}`
     window.open(`${option}`,'_blank')
 }
 

@@ -2,20 +2,23 @@
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-
+body {
+  height: 100%;
+}
 .main {
-  background-color: #adadad;
+  background-color: #333333;
   display: flex;
   flex-direction: column;
 }
 
 /* menu-hamburguer*/
-#btn-menu:checked ~ .menu{
+#btn-menu:checked ~ .menu {
   margin-left: 57%;
   display: block;
 }
-.btn-voltar{
+.btn-voltar {
   position: absolute;
   left: 15px;
   font-size: 30px;
@@ -61,31 +64,26 @@ label[for="btn-menu"] {
   display: flex;
   justify-content: center;
   background-color: #333333;
-  height: 5%;
+  padding: 20px;
 }
 .logo {
   width: 60%;
   height: 100%;
+  margin:1%;
 }
 
 /*card dos destaques*/
-section.destaque {
-  width: 95vw;
-  height: 260px;
+.destaque {
+  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
-  background-color: #333333;
 }
 .caroussel {
-  width: 95%;
   max-height: 220px;
   display: flex;
-  margin-bottom: 10px;
   justify-content: space-around;
-  background-color: #bf8164;
-
+  background-color: #333333;
 }
 .card-destaque {
   box-sizing: border-box;
@@ -93,14 +91,13 @@ section.destaque {
   display: inline-flex;
   flex-direction: column;
   width: 32%;
-  margin: 10px 0;
+  margin: 1%;
   font-weight: bold;
   padding: 0 1% 1%;
   font-size: 80%;
   height: auto;
   text-align: center;
 }
-
 /* todas as peças filtros*/
 .text-simple {
   font-size: 100%;
@@ -110,10 +107,8 @@ section.destaque {
   color: #ffffff;
 }
 .all-plays {
-  width: 95vw;
   display: flex;
   flex-direction: column;
-  margin: 10px;
   background-color: #333333;
 }
 .search-by-name {
@@ -142,15 +137,20 @@ section.destaque {
 .filter-value {
   width: 33%;
   border-radius: 20px;
-  padding-left: 8px;
+  padding-left: 5px;
 }
 .date-input {
-  width: 100px;
+  width: 115px;
+  text-align: center;
   border-radius: 20px;
+  padding-left: 5px;
 }
-
+.date-input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}
 /* cards todas as peças */
-.all{
+.all {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,10 +163,11 @@ section.destaque {
 .listcard {
   display: flex;
   flex-direction: row;
-  width: 95%;
+  width: 90%;
   border-radius: 10px;
-  background-color: #fff;
-  margin-top: 15px;
+  background-color: rgb(248, 242, 242);
+  margin-top: 2%;
+  padding: 2%;
 }
 .card-image {
   align-self: center;
@@ -177,9 +178,8 @@ section.destaque {
 }
 .listcard-img {
   align-self: center;
-  width: 100px;
-  height: 80px;
-  margin: 0;
+  width: 10em;
+  margin: 2%;
   padding: 0 1%;
 }
 .card-time {
@@ -188,41 +188,47 @@ section.destaque {
   border-radius: 10px 10px 0 0;
   background-color: #E85531;
 }
-
-
-.location-icon{
+.location-icon {
   color: #757474;
 }
 .btn-buy {
-  background-color:green;
+  background-color:#258c72;
+  border-radius: 10px;
   color: #fff;
-  padding: 5px 10px;
-  margin:0px 10px 5px 0px;
+  padding: 4px;
+  margin: 2%;
+  border: none;
+  font-size: 10px;
+  height: 25px;
+  width: 55px
 }
-.partners{
+
+.btn-buy:hover {
+  background-color:#E85531;
+}
+.partners {
   background-color: #adadad;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.partners-container{
+.partners-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  padding: 5%;
+  padding: 1%;
 }
-.partners-title{
+.partners-title {
   text-align: center;
-  font-size: 25px;
-  margin: 20px 0px 20px 0px;
-  text-decoration:underline;
+  font-size: 20px;
+  margin-top:1%;
 }
-.image-partner{
-  height: 15%;
-  width: 20%;
-  margin: 0 2% 3%;
+.image-partner {
+  height: 3%;
+  width: 10%;
+  margin: 2%;
 }
 
 /* form indicação de peça */
@@ -230,6 +236,7 @@ section.destaque {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
   padding: 3% 0;
   margin: 0 10%;
   background-color: #333333;
@@ -239,7 +246,7 @@ section.destaque {
 .input {
   width: auto;
   border-radius: 15px;
-  padding: 4px;
+  padding: 8px;
 }
 .search-input {
   margin: 0px 10px;
@@ -252,25 +259,22 @@ section.destaque {
   border: 1px solid #E85531;
   align-items: center;
 }
-
-.card-info{
+.card-info {
 display: flex;
 flex-direction: column;
 width: 100%;
 justify-content: center;
 }
-
-.info{
+.info {
   display: flex;
   flex-direction: column;
 }
-
-.footer-info{
+.footer-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 2px;
 }
-
 .card-name {
   min-height: 60px;
   font-weight: bolder;
@@ -282,51 +286,49 @@ justify-content: center;
 }
 .listcard-name {
   font-weight: bolder;
+  font-size: 18px;
+  margin-top: 3px;
 }
-
-
-.card-theatre{
+.card-theatre {
   font-size: 12px;
+  margin-top: 2px;
 }
-
-.card-classification{
-  width: 30px;
+.card-classification {
+  width: 25px;
+  margin-top: 3px;
 }
 
 /* about us */
 
 .aboutUs {
-  background-image: url(./Imagens/theater.jpg);
+  background-color: #333333;
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   display: flex;
   justify-content: center;
-  color: #ffffff;
+  color: #333333;
   align-items: center;
-
 }
-
 .about-us-container {
   width: 85%;
-  height: 90%;
+  height: 85%;
   align-self: center;
-  background-color: rgba(12, 12, 12, 0.76);
+  background-color:rgb(248, 242, 242);
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2%;
+  padding: 5%;
   margin: 5%;
 }
-
 .about-us-info {
   width: 80%;
 }
-
 .name-network {
   display: flex;
   justify-content: center;
 }
-
 .title-about-us {
   display: flex;
   justify-content: center;
@@ -336,67 +338,65 @@ justify-content: center;
 /* indicação */
 .register-section {
   width: 100vw;
-  height: 90vh;
-  background-color: #adadad;
+  height: 110vh;
+  background-color: rgb(248, 242, 242);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .text-description-indicate {
   display: flex;
   flex-flow: column;
-  padding: 0 10%;
+  padding: 10%;
   text-align: center;
 }
-
 .send-message {
   margin: 5% 0;
 }
-
 .title-indicate {
   color: rgb(255, 253, 253);
 }
-
 .input-indicate {
   width: 80%;
   margin-bottom: 20px;
+  border-radius: 5px;
+  padding-left: 5px;
 }
-
 .button-send-green {
   width: 70px;
-  background-color: rgb(93, 199, 98);
+  background-color: #258c72;
   border-radius: 10px;
+  border:none;
+  color: #fff;
+  padding: 4px;
+  margin: 2%;
+  border: none;
+  font-size: 10px;
 }
 
 /* contato */
 .profile-section {
-  background-color: #adadad;
+  background-color: rgb(248, 242, 242);
   width: 100vw;
   height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
-
 .alert-message {
   padding: 5%;
   text-align: center;
 }
 .handshake-icon {
-  margin-top: 100px;
   align-self: center;
   width: 40%;
 }
-
 .email-link {
   display: flex;
   align-self: center;
   margin-top: 30px;
   color: #000000;
 }
-
 .modal {
   display: none; 
   position: fixed;
@@ -407,12 +407,9 @@ justify-content: center;
   width: 100%; 
   height: 100%; 
   overflow: auto; 
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); 
 }
-
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgb(248, 242, 242);
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -421,239 +418,102 @@ justify-content: center;
   display: flex;
   flex-direction: column;
 }
-
 .btn-close {
   width: 25%;
   align-self: flex-end;
+  border: none;
   color: rgb(7, 7, 7);
+}
+.btn-close:hover {
+  background: #e2564c;
+  color:#fff;
 }
 
 @media only screen and (min-width: 768px) {
-.header{
-  height:2%;
-}
-
-.menu-desktop{
-  display: none;
-}
-
-.menu{
-  display: flex;
-  top: 15px;
-  right: 5%;
-  position: absolute;
-  width: auto;
-}
-
-.menu ul {
-  display:flex;
-  flex-direction: row;
-  list-style: none;
-
-}
-
-.menu ul li {
-  width: auto;
-  height: 50px;
-  cursor: pointer;
-}
-
-.menu ul li:hover{
-text-decoration-line: underline;
-}
-
-.return{
-  display: none;
-}
-.logo{
-  width: 25%;
-  max-height: 70px;
-}
-
-div.destaque{
-  margin: 20px 0px 10px 10px;
-  max-width: 100vw;
-  height: 350px;
-}
-
-.caroussel{
-  width: 97%;
-  height: 70%;
-}
-
-.search{
-  width: 95vw;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.all-plays{
-  max-width: 100vw;
-  margin: 20px 0px 10px 10px;
-  
-}
-.select-filters{
-  margin-left: 30%;
-  width: 40%;
-}
-
-.all{
-  max-height: 500px;
-  margin-bottom: 10px;
-}
-.listcard{
-  margin-left: 20px;
-}
-
-/* sobre */
-.aboutUs{
-  background-image: url(./Imagens/theater_2.jpg) ;
-}
-
-.about-us-container{
-  width: 50%;
-}
-
-.about-us-info{
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  .header{
+    height:2%;
   }
-
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1; 
-  padding-top: 100px; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4); 
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  border-radius: 15px;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-}
-
-.btn-close {
-  width: 5%;
-  align-self: flex-end;
-  color: rgb(7, 7, 7);
-}
-.card-sinopse {
-  text-align: justify;
-}
-
-.menu{
-  display: flex;
-  top: 15px;
-  right: 5%;
-  position: absolute;
-  width: auto;
-}
-
-.menu ul {
-  display:flex;
-  flex-direction: row;
-  list-style: none;
-
-}
-
-.menu ul li {
-  width: auto;
-  height: 50px;
-  cursor: pointer;
-}
-
-.menu ul li:hover{
-text-decoration-line: underline;
-}
-  .btn-buy {
-    padding: 0;
-    margin: 0px 15px 30px 0px;
+  .menu-desktop {
+    display: none;
   }
-  
-  .search{
+  .menu {
+    display: flex;
+    top: 15px;
+    right: 5%;
+    position: absolute;
+    width: auto;
+  }
+  .menu ul {
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+
+  }
+  .menu ul li {
+    width: auto;
+    height: 50px;
+    cursor: pointer;
+  }
+  .menu ul li:hover {
+  text-decoration-line: underline;
+  }
+  .return {
+    display: none;
+  }
+  .logo {
+    width: 25%;
+    max-height: 70px;
+    display: flex;
+    justify-content: space-between;
+  }
+  div.destaque {
+    margin: 20px 0px 10px 10px;
+    max-width: 100vw;
+    height: 350px;
+  }
+  .search {
     width: 95vw;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
-  .logo {
-    width: 25%;
-    max-height: 70px;
+  .all-plays {
+    max-width: 100vw;
+  }
+  .select-filters {
+    margin-left: 30%;
+    width: 40%;
+  }
+  .all {
+    max-height: 500px;
+    margin-bottom: 10px;
+  }
+  .listcard {
+    display: flex;
+    flex-direction: row;
+    height: 35%;
+    width: 80%;
+    border-radius: 10px;
+    background-color: #d9d9d6;
+    margin-top: 2%;
   }
 
-  .card-name {
-    font-size: 20px;
-    min-height: 20px;
-
-  }
-  .card-image {
-    max-width: 300px;
-    height: 350px;
-    max-height: 170px;
-    padding: 1% 0;
-  }
-  .listcard-img {
-    width: 25%;
-    height: 120px;
-  }
-
-  section.destaque{
-    height: 350px;
-  }
-
-  .caroussel{
-    height:300px;
-    max-height: 300px;
-  }
-  .card-destaque {
-    height: auto;
-  }
   /* sobre */
   .aboutUs {
-    background-image: url(./Imagens/theater_2.jpg);
+    height: 100vw;
+    margin-top: -20%;
   }
-
-  /* indique uma peça */
-  .forms {
-    max-width: 500px;
-    width: 500px;
-   align-self: center;
-  }
-
-  .text-description-indicate { 
-    height: 150px;
-  }
-
-  .input-indicate {
+  .about-us-container {
     width: 50%;
-    margin-bottom: 20px;
+    height: 40%;
   }
-
-  .send-message {
-    text-align: center;
+  .about-us-info {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-
-  .handshake-icon {
-    width: 15%;
-    margin-top: 10px;
-  }
-
   .modal {
     display: none; 
     position: fixed;
@@ -667,30 +527,137 @@ text-decoration-line: underline;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4); 
   }
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-close {
+    width: 5%;
+    align-self: flex-end;
+    color: rgb(7, 7, 7);
+  }
+  .card-sinopse {
+    text-align: justify;
+  }
+  .menu {
+    display: flex;
+    top: 15px;
+    right: 5%;
+    position: absolute;
+    width: auto;
+  }
+  .menu ul {
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+  }
+  .menu ul li {
+    width: auto;
+    height: 50px;
+    cursor: pointer;
+  }
+  .menu ul li:hover {
+  text-decoration-line: underline;
+  }
+  .btn-buy {
+    padding: 0;
+    margin: 0px 15px 30px 0px;
+    height: 50px;
+    width: 100px;
+    font-size: 17px;
+  }  
+  .search {
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo {
+    width: 25%;
+    max-height: 70px;
+  }
+  .card-name {
+    font-size: 20px;
+    min-height: 20px;
+  }
+  .card-image {
+    max-width: 300px;
+    height: 350px;
+    max-height: 170px;
+    padding: 1% 0;
+  }
+  .listcard-img {
+    width: 20em;
+  }
+  section.destaque{
+    height: 350px;
+  }
+  .caroussel {
+    height:300px;
+    max-height: 300px;
+  }
+  .card-destaque {
+    height: auto;
+  }
 
-
+  /* indique uma peça */
+  .forms {
+    max-width: 500px;
+    width: 500px;
+    align-self: center;
+  }
+  .text-description-indicate { 
+    height: 150px;
+  }
+  .input-indicate {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+  .send-message {
+    text-align: center;
+  }
+  .handshake-icon {
+    width: 15%;
+    margin-top: 10px;
+  }
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+  }
   .close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
-  
   .close:hover,
   .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
   }
-
-  .partners-container{
+  .partners-container {
     display: flex;
     width:100vw;
-    margin-top: 40px;
+    margin-top: 2%;
     justify-content: center;
   }
-  .image-partner{
+  .image-partner {
     width: 100px;
   }
-
 }

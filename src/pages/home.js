@@ -14,7 +14,7 @@ const getTheaterApi = () => {
       })
       getTheater();
     }).catch((err) => {
-      console.log(err); //TODO implement isso aqui direito bjs
+      console.log(err);
     });
 }
 

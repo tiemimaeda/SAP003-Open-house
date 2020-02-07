@@ -1,12 +1,11 @@
 {
-  "name": "social-network",
+  "name": "open-house-uni-teatro",
   "version": "1.0.0",
-  "description": "Social Network @ Laboratoria",
+  "description": "open-house-uni-teatro",
   "main": "src/index.html",
   "keywords": [
     "javascript",
-    "firebase",
-    "jest"
+    "firebase"
   ],
   "license": "MIT",
   "scripts": {

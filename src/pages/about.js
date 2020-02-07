@@ -3,30 +3,44 @@ import Menu from '../components/menu.js';
 function AboutUs() {
   const template = `
   <div class="template">
-    <header class="header">
-      <label for="btn-back" class="return btn-voltar" 
-        onClick="window.location.hash = 'home';" ><i class=" far fa-arrow-alt-circle-left"></i>
-      </label>
-      <img class="logo" src="./Imagens/logo.png">
-    </header>
-    <input type="checkbox" id="btn-menu" class='menu-desktop' />
-    <label for="btn-menu" class="hamburguer-menu menu-desktop"><i class="fas fa-bars"></i></label>
-    <nav class="menu">
-      <ul>
-        ${Menu({
-          name: 'Home',
-          link: Home,
-        })}
-        ${Menu({
-          name: 'Indique uma peça',
-          link: Indicate,
-        })}
-        ${Menu({
-          name: 'Contato',
-          link: Contact,
-        })}
-      </ul> 
-    </nav>  
+  <header class="header">
+  <img class="logo" src="./Imagens/logo.png">
+  <!--Navbar-->
+  <nav class="navbar navbar-light amber lighten-4 mb-4">
+  
+    <!-- Navbar brand -->
+    
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+      aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon1"><span></span><span></span><span></span></div>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-white" href="#home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#indicate">Indique uma Peça</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#contact">Contato</a>
+        </li>
+      </ul>
+      <!-- Links -->
+  
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+
+</header> 
     <section class = "aboutUs">
       <div class='about-us-container'>
         <div class='about-us-info'>

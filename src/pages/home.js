@@ -1,6 +1,5 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
-import Card from '../components/card.js';
 import Menu from '../components/menu.js';
 import ListCard from '../components/listcard.js';
 
@@ -18,42 +17,59 @@ const getTheaterApi = () => {
     });
 }
 
-const getTheater = () => {
-  fetch(`https://open-house-309f5.firebaseio.com/plays.json`)
-  .then(response => response.json())
-  .then((data) => {
-    const arr = [4,1,15];
-    for (let i=0; arr.length>= i; i++) {
-      cardsHighlight(data[arr[i]])
-    }
-  });
-}
-
-
 function Home() {
   const template = `
   <header class="header">
-    <img class="logo" src="./Imagens/logo.png">
-    <input type="checkbox" id="btn-menu" class='menu-desktop' />
-    <label for="btn-menu" class="hamburguer-menu menu-desktop"">&#9776;</label>
-    <nav class="menu">
-      <ul>
-      ${Menu({
-        name: 'Sobre',
-        link: About,
-      })}
-      ${Menu({
-        name: 'Indique uma peça',
-        link: Indicate,
-      })}
-      ${Menu({
-        name: 'Contato',
-        link: Contact,
-      })}
-      </ul> 
+  <img class="logo" src="./Imagens/logo.png">
+
+    <!--Navbar-->
+    <nav class="navbar navbar-light amber lighten-4 mb-4">
+  
+    
+      <!-- Collapse button -->
+      <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+        aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="animated-icon1"><span></span><span></span><span></span></div>
+      </button>
+    
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+    
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="#about" >Sobre <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#indicate">Indique uma Peça</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#contact">Contato</a>
+          </li>
+        </ul>
+        <!-- Links -->
+    
+      </div>
+      <!-- Collapsible content -->
+    
     </nav>
+    <!--/.Navbar-->
+  
   </header>
-  <article class='caroussel'></article>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../Imagens/carousel/ballet.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+  </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../Imagens/carousel/amigas.jpg" alt="Second slide">
+    </div>
+  </div>
+</div>
+
   <section class='all-plays'>
   <h3 class="text-simple">Todas as peças</h3>
     <form class = 'search-by-name'>
@@ -124,10 +140,6 @@ function Home() {
   return template;
 }
 
-$('.carousel').carousel({
-  interval: 2000
-})
-
 function sendClicksAnalitycs(){
   const analitycs = {}
   theater
@@ -144,22 +156,6 @@ function sendClicksAnalitycs(){
     )})
 }
 
-
-function cardsHighlight(allData) {
-  if (!allData) {
-    return false;
-  }
-  document.querySelector('.caroussel').innerHTML += `
-  ${Card({
-    class: 'card-destaque', 
-    id: allData.ticket_url, 
-    img: allData.photo_url,
-    name: allData.name,
-    synopsis:allData.synopsis
-  })}
-  `
-}
-
 function cards(allData) {
   document.querySelector('.all').innerHTML += `
     ${ListCard({
@@ -174,8 +170,6 @@ function cards(allData) {
     })}
   `
 }
-
-
 
 function filterPrice() {
   document.querySelector('.all').innerHTML = '';
@@ -248,7 +242,6 @@ function filterDate() {
     })
 }
 
-
 function About() {
   window.location.hash = 'about'
 };
@@ -284,24 +277,4 @@ window.home = {
 
 export {Home, getTheaterApi} ;
 
-{/* <div id="carousel" class="carousel slide" data-ride="carousel">
-<div class="carousel-inner">
-  <div class="carousel-item active">
-    <img class="d-block w-100" src="../img/img1.png" alt="First slide">
-  </div>
-  <div class="carousel-item">
-    <img class="d-block w-100" src="../img/img2.jpg" alt="Second slide">
-  </div>
-  <div class="carousel-item">
-    <img class="d-block w-100" src="../img/img3.jpg" alt="Third slide">
-  </div>
-</div>
-<a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="sr-only">Previous</span>
-</a>
-<a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="sr-only">Next</span>
-</a>
-</div> */}
+

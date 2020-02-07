@@ -10,7 +10,7 @@ function ListCard(props) {
                     <p class = "card-theatre"><i class="location-icon fas fa-map-marker-alt"></i>
                         ${props.theater}
                     </p>
-                    <img class = "card-classification" src='../Imagens/parental-raiting-icons/${props.classification}.png'>
+                    <img class = "card-classification" src='../Imagens/parental-raiting-icons/jpg/${props.classification}.jpg'>
                         <div class='footer-info'>
                             <p class = "card-price">
                                 ${props.price}

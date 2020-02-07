@@ -9,6 +9,22 @@ function routesPage() {
     case "#home":
       main.innerHTML = Home();
       getTheaterApi();
+      $('.carousel').carousel();
+      $(document).ready(function () {
+
+        $('.first-button').on('click', function () {
+      
+          $('.animated-icon1').toggleClass('open');
+        });
+        $('.second-button').on('click', function () {
+      
+          $('.animated-icon2').toggleClass('open');
+        });
+        $('.third-button').on('click', function () {
+      
+          $('.animated-icon3').toggleClass('open');
+        });
+      });
       break;
     case "#about":
       main.innerHTML = AboutUs();

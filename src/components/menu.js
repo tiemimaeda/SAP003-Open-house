@@ -1,6 +1,6 @@
 function Menu (props) {
     const template = `
-    <li><a onclick="button.handleClick(event, ${props.link})">${props.name}</a></li>
+   <a onclick="button.handleClick(event, ${props.link})">${props.name}</a>
     `;
     return template;
 }

@@ -74,16 +74,16 @@ function Home() {
   <h3 class="text-simple">Todas as peças</h3>
     <form class = 'search-by-name'>
       ${Input({
-      class: 'input search-input',
-      placeholder: 'Pesquise pelo nome',
-      type: 'text',
-      })}
+    class: 'input search-input',
+    placeholder: 'Pesquise pelo nome',
+    type: 'text',
+  })}
       ${Button({
-        id: 'search',
-        class:'btn-search',
-        title: '<i class="fas fa-search"></i>', 
-        onClick: Search,
-      })}
+    id: 'search',
+    class: 'btn-search',
+    title: '<i class="fas fa-search"></i>',
+    onClick: Search,
+  })}
     </form>   
     <p class='or'> - ou - </p>
     <div class='select-filters'>
@@ -97,10 +97,10 @@ function Home() {
       </select>
       <form class='filter-date' onchange="window.home.filterDate()">
       ${Input({
-        class: 'date-input',
-        placeholder: '',
-        type: 'date',
-        })}
+    class: 'date-input',
+    placeholder: '',
+    type: 'date',
+  })}
       </form>
       <select id="price" class='filter-value' onchange="window.home.filterPrice()">
         <option value='Vai dar certo'>valor</option>
@@ -127,11 +127,11 @@ function Home() {
     <div class="modal-content">
       <p class = "modal-name"></p>
       ${Button({
-        id: 'close',
-        class:'btn-close',
-        title: '&times', 
-        onClick: closeModal,
-      })}
+    id: 'close',
+    class: 'btn-close',
+    title: '&times',
+    onClick: closeModal,
+  })}
       <p class="card-sinopse"></p>
     </div>
   </div>
@@ -140,34 +140,36 @@ function Home() {
   return template;
 }
 
-function sendClicksAnalitycs(){
+function sendClicksAnalitycs() {
   const analitycs = {}
   theater
 
-  fetch('https://open-house-309f5.firebaseio.com/analitycs.json',{
+  fetch('https://open-house-309f5.firebaseio.com/analitycs.json', {
     method: 'POST',
     body: JSON.stringify(form)
   })
     .then(res => res.json())
-    .then(() => { Swal.fire(
-      'Formulário enviado',
-      'obrigada!',
-      'success'
-    )})
+    .then(() => {
+      Swal.fire(
+        'Formulário enviado',
+        'obrigada!',
+        'success'
+      )
+    })
 }
 
 function cards(allData) {
   document.querySelector('.all').innerHTML += `
     ${ListCard({
-      id: allData.ticket_url, 
-      class: 'listcard',
-      img: allData.photo_url,
-      name: allData.name,
-      price: allData.price,
-      classification: allData.parental_raiting,
-      theater: allData.theater_name,
-      synopsis: allData.synopsis
-    })}
+    id: allData.ticket_url,
+    class: 'listcard',
+    img: allData.photo_url,
+    name: allData.name,
+    price: allData.price,
+    classification: allData.parental_raiting,
+    theater: allData.theater_name,
+    synopsis: allData.synopsis
+  })}
   `
 }
 
@@ -178,16 +180,16 @@ function filterPrice() {
     .then(response => response.json())
     .then(data => {
       data.map((item) => {
-        if (option == item.price ) {
-          window.home.cards(item) ;
-        }
-        else if (option == "R$50,00" && 50 > parseInt(item.price.replace(/\D/g,''))/100) {
-            window.home.cards(item);
-        }
-        else if (option == "R$100,00" && 100 >= parseInt(item.price.replace(/\D/g,''))/100){
+        if (option == item.price) {
           window.home.cards(item);
         }
-        else if (option == "R$100,01" && 101 < parseInt(item.price.replace(/\D/g,''))/100) {
+        else if (option == "R$50,00" && 50 > parseInt(item.price.replace(/\D/g, '')) / 100) {
+          window.home.cards(item);
+        }
+        else if (option == "R$100,00" && 100 >= parseInt(item.price.replace(/\D/g, '')) / 100) {
+          window.home.cards(item);
+        }
+        else if (option == "R$100,01" && 101 < parseInt(item.price.replace(/\D/g, '')) / 100) {
           window.home.cards(item);
         }
       })
@@ -201,25 +203,25 @@ function filterLocation() {
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
     .then(response => response.json())
     .then(data => {
-      data.map((locations) => {        
+      data.map((locations) => {
         if (options == locations.theater_zone) {
           window.home.cards(locations)
-        } 
+        }
       }
-    )
-  })
+      )
+    })
 }
 
 function Search() {
-  const keyWord  = document.querySelector('.input').value;
+  const keyWord = document.querySelector('.input').value;
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
-  .then(response => response.json())
-  .then(data => {
-    const filter  = data.filter((item) => item.name.includes(keyWord)); 
-    document.querySelector('.all').innerHTML = '';
-    filter.forEach((item) => window.home.cards(item) );
+    .then(response => response.json())
+    .then(data => {
+      const filter = data.filter((item) => item.name.includes(keyWord));
+      document.querySelector('.all').innerHTML = '';
+      filter.forEach((item) => window.home.cards(item));
     }
-  );
+    );
 }
 
 function filterDate() {
@@ -227,18 +229,19 @@ function filterDate() {
   document.querySelector('.all').innerHTML = '';
   const dateFilter = document.querySelector('.date-input').value;
   const d = new Date(dateFilter)
-  const date = d.getDate()+1;
-  const month = d.getMonth()+1;
+  const date = d.getDate() + 1;
+  const month = d.getMonth() + 1;
   const year = d.getFullYear();
   const dateResult = date + "/" + month + "/" + year;
 
   fetch('https://open-house-309f5.firebaseio.com/plays.json')
-  .then(response => response.json())
+    .then(response => response.json())
     .then(data => {
       data.map((item) => {
-        if(item.date.includes(dateResult)){
+        if (item.date.includes(dateResult)) {
           window.home.cards(item)
-        }})
+        }
+      })
     })
 }
 
@@ -258,7 +261,7 @@ function showModal(sinopse) {
   const modal = document.querySelector('#myModal');
   document.querySelector('.card-sinopse').innerHTML = sinopse;
   if (modal) {
-      modal.style.display = 'block';
+    modal.style.display = 'block';
   }
 }
 
@@ -268,13 +271,13 @@ function closeModal() {
 
 
 window.home = {
-  cards, 
+  cards,
   filterPrice,
   filterLocation,
   filterDate,
   showModal,
 }
 
-export {Home, getTheaterApi} ;
+export { Home, getTheaterApi };
 
 
